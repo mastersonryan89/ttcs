@@ -1,0 +1,307 @@
+/* ==========================================================================
+   TIFF TOP COMMUNITY SOLUTIONS — SITE STYLESHEET
+   --------------------------------------------------------------------------
+   Everything that controls how the site LOOKS lives in this one file.
+   Sections are labeled in CAPS so you can say things like
+   "make the buttons rounder" and Claude Code knows where to look.
+   ========================================================================== */
+
+
+/* ==========================================================================
+   1. BRAND SETTINGS
+   Change a color here and it changes everywhere on the site.
+   ========================================================================== */
+:root{
+  --navy:        #0E2A56;   /* main brand blue — headings, header, footer */
+  --navy-dark:   #091D3E;   /* darker blue — footer bottom bar */
+  --navy-mid:    #15356A;   /* lighter blue — borders on dark backgrounds */
+  --red:         #C8102E;   /* brand red — buttons, accents, links */
+  --red-dark:    #A00C24;   /* darker red — button hover */
+  --cream:       #F7F4EC;   /* warm off-white — page background */
+  --white:       #FFFFFF;
+  --ink:         #15213B;   /* body text */
+  --ink-soft:    #5A6480;   /* lighter text — captions, descriptions */
+  --hair:        #DCD7C9;   /* thin dividing lines */
+
+  --font-display: 'Big Shoulders Display', 'Arial Narrow', sans-serif;
+  --font-body:    'Public Sans', system-ui, -apple-system, sans-serif;
+
+  --page-width: 1180px;     /* how wide content gets on a big screen */
+  --section-space: 4.5rem;  /* vertical space above/below each section */
+}
+
+
+/* ==========================================================================
+   2. BASELINE
+   ========================================================================== */
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:var(--font-body);
+  color:var(--ink);
+  background:var(--cream);
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:var(--red);text-decoration:none}
+a:hover{text-decoration:underline}
+
+h1,h2,h3,h4{
+  font-family:var(--font-display);
+  font-weight:800;
+  text-transform:uppercase;
+  line-height:.98;
+  letter-spacing:.005em;
+  margin:0;
+}
+h1{font-size:clamp(2.4rem,6vw,4.2rem)}
+h2{font-size:clamp(1.9rem,4vw,2.9rem);color:var(--navy)}
+h3{font-size:1.25rem;color:var(--navy)}
+p{margin:0 0 1rem}
+
+.wrap{width:100%;max-width:var(--page-width);margin:0 auto;padding:0 6%}
+
+/* "EYEBROW" — the small red label above a heading */
+.eyebrow{
+  display:block;font-weight:700;text-transform:uppercase;
+  letter-spacing:.18em;font-size:.72rem;color:var(--red);margin-bottom:.5rem;
+}
+
+/* skip link for keyboard and screen-reader users */
+.skip{position:absolute;left:-9999px;background:var(--red);color:#fff;padding:.6rem 1rem;z-index:100}
+.skip:focus{left:1rem;top:1rem}
+
+
+/* ==========================================================================
+   3. BUTTONS
+   ========================================================================== */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  font-family:var(--font-body);font-weight:700;font-size:.95rem;
+  padding:.7rem 1.4rem;border:2px solid transparent;border-radius:3px;
+  cursor:pointer;transition:background .18s,color .18s,border-color .18s;
+  text-decoration:none;
+}
+.btn:hover{text-decoration:none}
+.btn-red{background:var(--red);color:#fff;border-color:var(--red)}
+.btn-red:hover{background:var(--red-dark);border-color:var(--red-dark);color:#fff}
+.btn-white{background:#fff;color:var(--navy);border-color:#fff}
+.btn-white:hover{background:transparent;color:#fff;border-color:#fff}
+.btn-outline{background:transparent;color:var(--navy);border-color:var(--navy)}
+.btn-outline:hover{background:var(--navy);color:#fff}
+
+
+/* ==========================================================================
+   4. HEADER & NAVIGATION
+   ========================================================================== */
+.site-header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(247,244,236,.94);backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--hair);
+}
+.header-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.6rem 6%;
+  max-width:var(--page-width);margin:0 auto}
+.brand{display:flex;align-items:center;gap:.6rem;text-decoration:none}
+.brand img{height:46px;width:auto}
+.brand-name{display:flex;flex-direction:column;line-height:1}
+.brand-name b{font-family:var(--font-display);font-weight:800;font-size:1.15rem;
+  color:var(--navy);text-transform:uppercase;letter-spacing:.01em}
+.brand-name span{font-size:.55rem;font-weight:700;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--ink-soft);margin-top:3px}
+
+.site-nav{display:flex;align-items:center;gap:1.35rem}
+.site-nav a{font-weight:600;font-size:.88rem;color:var(--navy);text-decoration:none;position:relative;padding:.2rem 0}
+.site-nav a::after{content:"";position:absolute;left:0;bottom:-3px;width:0;height:2px;
+  background:var(--red);transition:width .2s}
+.site-nav a:hover::after,.site-nav a[aria-current="page"]::after{width:100%}
+.site-nav a[aria-current="page"]{color:var(--red)}
+.site-nav .btn{padding:.55rem 1.1rem;font-size:.85rem}
+.site-nav .btn::after{display:none}
+
+/* mobile menu button */
+.nav-toggle{display:none;background:none;border:0;cursor:pointer;padding:.5rem}
+.nav-toggle span{display:block;width:26px;height:2px;background:var(--navy);margin:6px 0;transition:.25s}
+
+
+/* ==========================================================================
+   5. HERO (the big band at the top of every page)
+   ========================================================================== */
+.hero{background:var(--navy);color:#fff;position:relative;overflow:hidden;
+  padding:var(--section-space) 0 calc(var(--section-space) + .5rem)}
+.hero .eyebrow{color:#8FA8CC}
+.hero h1{color:#fff}
+.hero .tagline{font-family:var(--font-display);font-weight:600;text-transform:uppercase;
+  font-size:clamp(1rem,2.2vw,1.45rem);color:#FF8A9B;letter-spacing:.04em;margin:.7rem 0 1rem}
+.hero p{color:#C7D3E6;font-size:1.05rem;max-width:60ch}
+.hero-buttons{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.6rem}
+.hero-note{margin-top:1.6rem;font-family:var(--font-display);text-transform:uppercase;
+  font-weight:600;font-size:1.05rem;color:#8FA8CC;letter-spacing:.05em}
+
+/* short version used on interior pages */
+.hero.hero-short{padding:3rem 0 3.2rem}
+.hero.hero-short h1{font-size:clamp(2rem,5vw,3.2rem)}
+
+/* red/cream striped bar along the bottom of the hero */
+.flagline{display:flex;height:6px;position:absolute;left:0;right:0;bottom:0}
+.flagline i{flex:1}
+.flagline i:nth-child(odd){background:var(--red)}
+.flagline i:nth-child(even){background:var(--cream)}
+
+
+/* ==========================================================================
+   6. SECTIONS
+   ========================================================================== */
+.section{padding:var(--section-space) 0}
+.section-white{background:var(--white);border-top:1px solid var(--hair);border-bottom:1px solid var(--hair)}
+.section-navy{background:var(--navy);color:#fff}
+.section-navy h2{color:#fff}
+.section-head{max-width:60ch;margin-bottom:2.2rem}
+.section-head p{color:var(--ink-soft);font-size:1.05rem}
+
+/* two-column text + image */
+.split{display:grid;grid-template-columns:1.1fr 1fr;gap:3rem;align-items:center}
+.split p{color:var(--ink-soft);font-size:1.05rem}
+
+
+/* ==========================================================================
+   7. CARDS
+   ========================================================================== */
+.card-grid{display:grid;gap:1.2rem}
+.card-grid.cols-2{grid-template-columns:repeat(2,1fr)}
+.card-grid.cols-3{grid-template-columns:repeat(3,1fr)}
+.card-grid.cols-4{grid-template-columns:repeat(4,1fr)}
+
+.card{
+  background:var(--cream);border:1px solid var(--hair);border-top:4px solid var(--red);
+  padding:1.6rem 1.4rem;border-radius:3px;transition:transform .16s,box-shadow .16s;
+}
+.section-white .card{background:var(--cream)}
+.card:hover{transform:translateY(-3px);box-shadow:0 10px 26px rgba(14,42,86,.10)}
+.card h3{margin-bottom:.5rem}
+.card p{color:var(--ink-soft);font-size:.93rem;margin:0}
+.card a{font-weight:700;font-size:.88rem;display:inline-block;margin-top:.8rem}
+
+/* small badge for programs that aren't running yet */
+.badge{display:inline-block;font-size:.62rem;font-weight:700;letter-spacing:.14em;
+  text-transform:uppercase;background:var(--navy);color:#fff;padding:.2rem .5rem;
+  border-radius:2px;margin-bottom:.6rem}
+
+
+/* ==========================================================================
+   8. STATS BAND
+   ========================================================================== */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;margin-top:2rem}
+.stat .stat-number{font-family:var(--font-display);font-weight:800;
+  font-size:clamp(2.4rem,5vw,3.4rem);color:#fff;line-height:1}
+.stat .stat-number em{font-style:normal;color:#FF8A9B}
+.stat .stat-label{font-size:.78rem;font-weight:700;text-transform:uppercase;
+  letter-spacing:.13em;color:#8FA8CC;margin-top:.35rem}
+
+
+/* ==========================================================================
+   9. QUOTE
+   ========================================================================== */
+.quote{max-width:52ch;margin:0 auto;text-align:center}
+.quote blockquote{margin:0;font-family:var(--font-display);font-weight:600;
+  text-transform:none;font-size:clamp(1.3rem,2.8vw,1.9rem);color:var(--navy);line-height:1.25}
+.quote cite{display:block;font-style:normal;font-size:.82rem;font-weight:700;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--red);margin-top:1.1rem}
+
+
+/* ==========================================================================
+   10. PHOTO PLACEHOLDERS
+   Temporary blocks standing in for real photos. Each one names the shot
+   we need. Replace with <img src="assets/your-photo.jpg" alt="...">
+   ========================================================================== */
+.photo-slot{
+  background:var(--navy);border-radius:3px;aspect-ratio:4/3;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;padding:1.5rem;color:#8FA8CC;position:relative;overflow:hidden;
+}
+.photo-slot::before{content:"";position:absolute;inset:0;
+  background:repeating-linear-gradient(45deg,transparent,transparent 12px,rgba(255,255,255,.025) 12px,rgba(255,255,255,.025) 24px)}
+.photo-slot b{font-family:var(--font-display);text-transform:uppercase;font-size:.72rem;
+  letter-spacing:.2em;color:#FF8A9B;position:relative}
+.photo-slot span{font-size:.86rem;margin-top:.5rem;position:relative;max-width:26ch}
+
+
+/* ==========================================================================
+   11. LOGO ROW (partner logos)
+   ========================================================================== */
+.logo-row{display:grid;grid-template-columns:repeat(5,1fr);gap:1rem;align-items:center}
+.logo-slot{border:1px dashed var(--hair);border-radius:3px;height:74px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft)}
+
+
+/* ==========================================================================
+   12. CALL-TO-ACTION BAND (the red strip near the bottom of pages)
+   ========================================================================== */
+.cta-band{background:var(--red);color:#fff;text-align:center;padding:3.2rem 0}
+.cta-band h2{color:#fff;margin-bottom:.8rem}
+.cta-band p{color:#FFD9DF;max-width:52ch;margin:0 auto 1.6rem}
+
+
+/* ==========================================================================
+   13. FOOTER
+   ========================================================================== */
+.site-footer{background:var(--navy);color:#B9C7DE;padding:3.2rem 0 0;font-size:.9rem}
+.footer-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:2.4rem;
+  max-width:var(--page-width);margin:0 auto;padding:0 6% 2.6rem}
+.site-footer .brand-name b{color:#fff}
+.site-footer .brand-name span{color:#8FA8CC}
+.site-footer h4{font-family:var(--font-body);font-weight:700;text-transform:uppercase;
+  letter-spacing:.14em;font-size:.72rem;color:#fff;margin-bottom:.9rem}
+.site-footer ul{list-style:none;margin:0;padding:0}
+.site-footer li{margin-bottom:.45rem}
+.site-footer a{color:#B9C7DE;text-decoration:none}
+.site-footer a:hover{color:#fff;text-decoration:underline}
+.footer-bar{border-top:1px solid var(--navy-mid);padding:1.1rem 6%;
+  max-width:var(--page-width);margin:0 auto;display:flex;flex-wrap:wrap;
+  justify-content:space-between;gap:.6rem;font-size:.78rem;color:#8FA8CC}
+
+
+/* ==========================================================================
+   14. SCROLL-IN ANIMATION
+   ========================================================================== */
+.js .reveal{opacity:0;transform:translateY(14px);transition:opacity .55s ease,transform .55s ease}
+.js .reveal.is-visible{opacity:1;transform:none}
+
+
+/* ==========================================================================
+   15. MOBILE & TABLET
+   Anything inside this block only applies on smaller screens.
+   ========================================================================== */
+@media(max-width:1000px){
+  .card-grid.cols-4{grid-template-columns:repeat(2,1fr)}
+  .logo-row{grid-template-columns:repeat(3,1fr)}
+  .footer-top{grid-template-columns:1fr 1fr}
+}
+@media(max-width:860px){
+  :root{--section-space:3.2rem}
+  .nav-toggle{display:block}
+  .site-nav{
+    position:fixed;left:0;right:0;top:62px;flex-direction:column;align-items:stretch;gap:0;
+    background:var(--cream);border-bottom:1px solid var(--hair);padding:.5rem 0;
+    transform:translateY(-140%);transition:transform .3s ease;z-index:40;
+  }
+  .site-nav.is-open{transform:none}
+  .site-nav a{padding:.9rem 6%}
+  .site-nav .btn{margin:.6rem 6% 1rem}
+  .split{grid-template-columns:1fr;gap:1.6rem}
+  .card-grid.cols-3,.card-grid.cols-4{grid-template-columns:1fr}
+  .stats{grid-template-columns:repeat(2,1fr);gap:2rem 1rem}
+  .footer-top{grid-template-columns:1fr;gap:1.8rem}
+}
+
+/* respect people who ask their device to reduce motion */
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .js .reveal{opacity:1!important;transform:none!important;transition:none!important}
+  *{animation:none!important}
+}
+
+/* clear focus outline for keyboard users */
+a:focus-visible,button:focus-visible{outline:3px solid var(--red);outline-offset:2px}
