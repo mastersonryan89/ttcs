@@ -53,6 +53,8 @@
     <span class="eyebrow">Contact</span>
     <h1>Contact Us</h1>
     <p class="tagline">We'd love to hear from you.</p>
+    <p>Call, email, or send us a note below. Tell us a little about why you are reaching out and
+       we can point you to the right person the first time.</p>
   </div>
   <div class="flagline" aria-hidden="true">
     <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
@@ -60,15 +62,194 @@
 </section>
 
 <!-- =========================================================
-     PAGE CONTENT — built in a later session
+     THREE WAYS TO REACH US
      ========================================================= -->
 <section class="section">
-  <div class="wrap section-head reveal">
-    <span class="eyebrow">Coming next</span>
-    <h2>This page is next on the build list</h2>
-    <p>The layout is planned and the design system is ready. Tell Claude Code what you want here
-       and it will be built into this file.</p>
-    <a class="btn btn-outline" href="index.html">Back to home</a>
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Get in touch</span>
+      <h2>Three ways to reach us</h2>
+      <p>A phone call is the fastest way to get an answer during business hours.</p>
+    </div>
+    <div class="card-grid cols-3">
+
+      <article class="card reveal">
+        <h3>Call us</h3>
+        <p><a href="tel:6145020396"><strong>614-502-0396</strong></a><br>
+           Monday&ndash;Friday, 10am&ndash;6pm</p>
+      </article>
+
+      <article class="card reveal">
+        <h3>Email us</h3>
+        <p><a href="mailto:tiffany@ttc-solutions.org"><strong>tiffany@ttc-solutions.org</strong></a><br>
+           We reply within one business day.</p>
+      </article>
+
+      <article class="card reveal">
+        <h3>Come see us</h3>
+        <p>1511 S. High St<br>
+           Columbus, OH 43207<br>
+           Walk in during business hours.</p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     CONTACT FORM
+     ---------------------------------------------------------
+     IMPORTANT — THIS FORM IS NOT CONNECTED YET.
+     A plain HTML site cannot process a form by itself. Until a
+     host is chosen, anything sent here goes nowhere.
+
+     To switch it on, one of these:
+
+     NETLIFY   add  data-netlify="true"  to the <form> tag below
+     CLOUDFLARE  same idea, follow their Pages Forms setup
+     FORMSPREE   set  action="https://formspree.io/f/YOURCODE"
+
+     Then send a test message and confirm it arrives before launch.
+     ========================================================= -->
+<section class="section section-white">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Send us a message</span>
+      <h2>Tell us why you're reaching out</h2>
+      <p>The more we know before we call you back, the less time you spend repeating yourself.</p>
+    </div>
+
+    <div class="split split-top reveal">
+
+      <form class="form-wrap" name="contact" method="POST" action="">
+
+        <!-- spam trap: real people never see this, bots fill it in -->
+        <p class="hp" aria-hidden="true">
+          <label>Leave this field empty <input name="company" tabindex="-1" autocomplete="off"></label>
+        </p>
+
+        <div class="field">
+          <label for="name">Your name <span class="req" aria-hidden="true">*</span></label>
+          <input type="text" id="name" name="name" autocomplete="name" required>
+        </div>
+
+        <div class="form-row">
+          <div class="field">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" autocomplete="tel">
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" autocomplete="email">
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="reach">Best way to reach you</label>
+          <select id="reach" name="best_way_to_reach">
+            <option value="">No preference</option>
+            <option>Phone call</option>
+            <option>Text message</option>
+            <option>Email</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="who">I am <span class="req" aria-hidden="true">*</span></label>
+          <span class="hint" id="who-hint">This is the single most useful thing you can tell us.</span>
+          <select id="who" name="i_am" required aria-describedby="who-hint">
+            <option value="">Choose one&hellip;</option>
+            <option>Someone looking for services</option>
+            <option>A family member or friend of someone who needs help</option>
+            <option>A case manager, probation officer or discharge planner</option>
+            <option>An employer</option>
+            <option>Someone who wants to volunteer</option>
+            <option>A donor, funder or grantmaker</option>
+            <option>A community partner or another organization</option>
+            <option>Media</option>
+            <option>Something else</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="about">What is this about? <span class="req" aria-hidden="true">*</span></label>
+          <select id="about" name="about" required>
+            <option value="">Choose one&hellip;</option>
+            <option>Reentry or transition support</option>
+            <option>Employment or job readiness</option>
+            <option>Hiring through Second Chance Staffing</option>
+            <option>Housing assistance</option>
+            <option>Life skills training</option>
+            <option>Peer-led support groups</option>
+            <option>Making a referral</option>
+            <option>Volunteering</option>
+            <option>Partnership or collaboration</option>
+            <option>Donating or funding</option>
+            <option>Something else</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="message">Tell us a bit more</label>
+          <span class="hint" id="message-hint">A sentence or two is plenty. Please leave out medical,
+            treatment and legal details &mdash; those are better discussed in person.</span>
+          <textarea id="message" name="message" aria-describedby="message-hint"></textarea>
+        </div>
+
+        <div class="form-actions">
+          <button class="btn btn-red" type="submit">Send message</button>
+        </div>
+
+        <p class="form-note">Sending this is not an application for services and does not enroll
+          you in a program. It starts a conversation. Services begin in person.</p>
+
+      </form>
+
+      <div>
+        <div class="note">
+          <h3>If this is an emergency</h3>
+          <p>This form is not monitored around the clock. <strong>If someone is in danger, call
+             911.</strong> If you or someone you know is in crisis, call or text <strong>988</strong>
+             for the Suicide and Crisis Lifeline, free, 24 hours a day.</p>
+        </div>
+
+        <h3>What happens next</h3>
+        <p>A real person reads every message. We answer Monday through Friday, 10am to 6pm, usually
+           within one business day.</p>
+        <p>If your question is urgent or complicated, call us at
+           <a href="tel:6145020396">614-502-0396</a> instead. A five-minute conversation usually
+           beats a week of email.</p>
+
+        <h3>Looking for help yourself?</h3>
+        <p>You do not have to fill anything out to get started. You can walk in during business
+           hours, or read the plain-language version of what we offer.</p>
+        <p><a href="looking-for-services.html"><strong>Looking for services? &rarr;</strong></a></p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     WHERE TO FIND US
+     ========================================================= -->
+<section class="section">
+  <div class="wrap split reveal">
+    <div>
+      <span class="eyebrow">Where to find us</span>
+      <h2>1511 S. High Street</h2>
+      <p>Columbus, OH 43207<br>
+         Monday&ndash;Friday, 10am&ndash;6pm<br>
+         Closed Saturday and Sunday</p>
+      <p>We are on the south side of Columbus. Walk in during business hours, or call ahead at
+         <a href="tel:6145020396">614-502-0396</a> and we will make time for you.</p>
+      <a class="btn btn-outline" href="https://www.google.com/maps/search/?api=1&amp;query=1511+S+High+St+Columbus+OH+43207"
+         target="_blank" rel="noopener">Get directions</a>
+    </div>
+    <div class="photo-slot">
+      <b>Photo needed</b>
+      <span>The front entrance &mdash; what someone should look for when they pull up</span>
+    </div>
   </div>
 </section>
 

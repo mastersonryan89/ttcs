@@ -82,6 +82,9 @@ To use one: save it into `assets/`, then say
 
 ## Before launch
 
+- [ ] **Connect the contact form.** It is built but goes nowhere until a host is chosen.
+      Instructions are in a comment at the top of the form in `contact.html`.
+      Send a test message and confirm it arrives before launch.
 - [ ] Replace the `—` placeholders in the impact numbers with verified counts, or delete the section
 - [ ] Add EIN and 501(c)(3) determination language to the footer and Donate page
 - [ ] Embed the Givebutter or Zeffy donation form on `donate.html`
