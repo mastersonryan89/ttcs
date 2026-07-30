@@ -27,8 +27,6 @@ phone"* is enough. You don't need to know why.
 
 ## Where things live
 
-| File / folder | What it is |
-|---|---|
 All nine pages plus the two legal pages are now written. Nothing is a placeholder shell
 any more.
 
@@ -99,6 +97,10 @@ To use one: save it into `assets/`, then say
       instead of showing figures we cannot source yet.
 - [ ] Add the EIN to the footer and to the Donate page once the determination letter arrives.
       Corporate matching-gift portals ask for it, so a blank one costs real money.
+- [ ] Add real photos
+- [ ] Claim and fill in the Google Business Profile with matching address, phone, hours
+- [ ] Apply for Google for Nonprofits (unlocks the $10,000/month Ad Grant)
+- [ ] Point `TTC-solutions.org` at the host
 - [x] Write and add `privacy.html` and `terms.html`
 - [x] Build out Get Involved, Employers, Donate, Impact and Looking for Services
 
@@ -114,10 +116,6 @@ Each of these is marked with a **"NOTE FOR RYAN"** comment in the file, so you c
 | `looking-for-services.html` | Whether people really can walk in without an appointment during office hours; any local Franklin County crisis numbers she wants added |
 | `donate.html` | What things actually cost, so we can add real dollar amounts. No made-up "$25 buys…" lines are on the page |
 | `impact.html` | Nothing to confirm — but do not let anyone fill the numbers in with estimates |
-- [ ] Add real photos
-- [ ] Claim and fill in the Google Business Profile with matching address, phone, hours
-- [ ] Apply for Google for Nonprofits (unlocks the $10,000/month Ad Grant)
-- [ ] Point `TTC-solutions.org` at the host
 
 ---
 
