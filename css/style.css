@@ -73,6 +73,11 @@ p{margin:0 0 1rem}
 .skip{position:absolute;left:-9999px;background:var(--red);color:#fff;padding:.6rem 1rem;z-index:100}
 .skip:focus{left:1rem;top:1rem}
 
+/* text that only screen readers read out — invisible on screen but still
+   announced, so buttons with just an icon still make sense out loud */
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;
+  overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+
 
 /* ==========================================================================
    3. BUTTONS
@@ -95,6 +100,15 @@ p{margin:0 0 1rem}
 
 /* ==========================================================================
    4. HEADER & NAVIGATION
+   --------------------------------------------------------------------------
+   Menu items are chips with lightly rounded corners, matching the buttons
+   and cards used elsewhere. They tint on hover and fill in navy on the page
+   you are currently on.
+
+   Two items have drop-down menus: Get Involved and Contact. Each one is a
+   .has-sub block holding the main link, a small chevron button, and a
+   .subnav list. On a computer the menu opens when you hover or tab onto it;
+   the chevron button opens it on a touchscreen and for keyboard users.
    ========================================================================== */
 .site-header{
   position:sticky;top:0;z-index:50;
@@ -111,14 +125,61 @@ p{margin:0 0 1rem}
 .brand-name span{font-size:.55rem;font-weight:700;letter-spacing:.2em;
   text-transform:uppercase;color:var(--ink-soft);margin-top:3px}
 
-.site-nav{display:flex;align-items:center;gap:1.35rem}
-.site-nav a{font-weight:600;font-size:.88rem;color:var(--navy);text-decoration:none;position:relative;padding:.2rem 0}
-.site-nav a::after{content:"";position:absolute;left:0;bottom:-3px;width:0;height:2px;
-  background:var(--red);transition:width .2s}
-.site-nav a:hover::after,.site-nav a[aria-current="page"]::after{width:100%}
-.site-nav a[aria-current="page"]{color:var(--red)}
-.site-nav .btn{padding:.55rem 1.1rem;font-size:.85rem}
-.site-nav .btn::after{display:none}
+.site-nav{display:flex;align-items:center;gap:.15rem;flex-wrap:nowrap}
+
+/* the menu items. white-space:nowrap is the important part — it stops a
+   label like "Why Choose Us" from breaking across two lines, which is what
+   made the menu look stacked. The 4px corner matches the buttons and cards
+   used everywhere else on the site. */
+.site-nav > a,.site-nav .has-sub > a{
+  font-weight:600;font-size:.85rem;color:var(--navy);text-decoration:none;
+  white-space:nowrap;padding:.45rem .6rem;border-radius:4px;
+  transition:background .16s,color .16s;
+}
+.site-nav > a:hover,.site-nav .has-sub > a:hover{background:rgba(14,42,86,.09);text-decoration:none}
+.site-nav a[aria-current="page"]{background:var(--navy);color:#fff}
+
+/* the section you are inside, when you are on one of its sub-pages */
+.site-nav .has-sub.is-current > a{background:rgba(14,42,86,.09)}
+
+.site-nav .btn{padding:.55rem 1.1rem;font-size:.85rem;margin-left:.35rem}
+.site-nav .btn[aria-current="page"]{background:var(--red-dark);border-color:var(--red-dark);color:#fff}
+
+/* --- drop-down menus ---------------------------------------------------- */
+.has-sub{position:relative;display:flex;align-items:center;gap:.05rem;flex-wrap:wrap}
+
+/* the little chevron button next to the link */
+.sub-toggle{
+  display:flex;align-items:center;justify-content:center;
+  width:26px;height:26px;padding:0;border:0;border-radius:4px;
+  background:none;color:var(--navy);cursor:pointer;
+}
+.sub-toggle:hover{background:rgba(14,42,86,.09)}
+.sub-toggle::before{
+  content:"";width:6px;height:6px;margin-top:-3px;
+  border-right:2px solid currentColor;border-bottom:2px solid currentColor;
+  transform:rotate(45deg);
+}
+.sub-toggle[aria-expanded="true"]::before{margin-top:2px;transform:rotate(-135deg)}
+
+.subnav{
+  position:absolute;top:calc(100% + .5rem);left:0;z-index:60;
+  min-width:238px;margin:0;padding:.4rem;list-style:none;
+  background:var(--white);border:1px solid var(--hair);border-top:3px solid var(--red);
+  border-radius:4px;box-shadow:0 14px 30px rgba(14,42,86,.16);
+  opacity:0;visibility:hidden;transform:translateY(-6px);
+  transition:opacity .16s ease,transform .16s ease,visibility .16s;
+}
+.has-sub:hover .subnav,.has-sub:focus-within .subnav,.has-sub.is-open .subnav{
+  opacity:1;visibility:visible;transform:none;
+}
+.subnav li{margin:0}
+.subnav a{
+  display:block;padding:.55rem .7rem;border-radius:3px;white-space:nowrap;
+  font-size:.85rem;font-weight:600;color:var(--navy);text-decoration:none;
+}
+.subnav a:hover{background:var(--cream);text-decoration:none}
+.subnav a[aria-current="page"]{background:var(--navy);color:#fff}
 
 /* mobile menu button */
 .nav-toggle{display:none;background:none;border:0;cursor:pointer;padding:.5rem}
@@ -154,6 +215,9 @@ p{margin:0 0 1rem}
    6. SECTIONS
    ========================================================================== */
 .section{padding:var(--section-space) 0}
+/* when a link jumps to a section further down the page, stop the heading
+   from landing underneath the sticky header */
+section[id],h2[id],h3[id]{scroll-margin-top:90px}
 .section-white{background:var(--white);border-top:1px solid var(--hair);border-bottom:1px solid var(--hair)}
 .section-navy{background:var(--navy);color:#fff}
 .section-navy h2{color:#fff}
@@ -282,17 +346,42 @@ p{margin:0 0 1rem}
   .logo-row{grid-template-columns:repeat(3,1fr)}
   .footer-top{grid-template-columns:1fr 1fr}
 }
-@media(max-width:860px){
-  :root{--section-space:3.2rem}
+/* With the shorter labels the full menu needs about 880px of room, logo
+   included. Below 1080px of window it becomes the hamburger button rather
+   than being squeezed. Menu items can never break across two lines because
+   of the white-space:nowrap rule above. */
+@media(max-width:1080px){
   .nav-toggle{display:block}
   .site-nav{
     position:fixed;left:0;right:0;top:62px;flex-direction:column;align-items:stretch;gap:0;
     background:var(--cream);border-bottom:1px solid var(--hair);padding:.5rem 0;
     transform:translateY(-140%);transition:transform .3s ease;z-index:40;
+    max-height:calc(100vh - 62px);overflow-y:auto;
   }
   .site-nav.is-open{transform:none}
-  .site-nav a{padding:.9rem 6%}
+  .site-nav > a,.site-nav .has-sub > a{padding:.9rem 6%;border-radius:0;flex:1}
+  .site-nav > a:hover,.site-nav .has-sub > a:hover{background:rgba(14,42,86,.06)}
+  .site-nav a[aria-current="page"]{background:none;color:var(--red);box-shadow:inset 3px 0 0 var(--red)}
   .site-nav .btn{margin:.6rem 6% 1rem}
+  .site-nav .btn[aria-current="page"]{box-shadow:none}
+
+  /* drop-downs become indented lists that open in place */
+  .sub-toggle{width:46px;height:46px;margin-right:4%}
+  .subnav{
+    position:static;flex-basis:100%;width:100%;min-width:0;
+    margin:0;padding:0 0 .4rem;background:none;border:0;border-radius:0;box-shadow:none;
+    opacity:1;visibility:visible;transform:none;transition:none;display:none;
+  }
+  .subnav a{padding:.7rem 6% .7rem calc(6% + 1.1rem);border-radius:0;font-weight:500}
+  .subnav a:hover{background:rgba(14,42,86,.06)}
+  .subnav a[aria-current="page"]{background:none;color:var(--red)}
+  /* on a touchscreen only the chevron button opens it, never hover */
+  .has-sub:hover .subnav,.has-sub:focus-within .subnav{display:none}
+  .has-sub.is-open .subnav{display:block}
+}
+
+@media(max-width:860px){
+  :root{--section-space:3.2rem}
   .split{grid-template-columns:1fr;gap:1.6rem}
   .card-grid.cols-2,.card-grid.cols-3,.card-grid.cols-4{grid-template-columns:1fr}
   .stats{grid-template-columns:repeat(2,1fr);gap:2rem 1rem}
@@ -303,6 +392,8 @@ p{margin:0 0 1rem}
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   .js .reveal{opacity:1!important;transform:none!important;transition:none!important}
+  .subnav,.site-nav{transition:none!important}
+  .subnav{transform:none!important}
   *{animation:none!important}
 }
 
@@ -383,3 +474,19 @@ fieldset{border:0;padding:0;margin:0}
   .form-row{grid-template-columns:1fr}
   .form-wrap{padding:1.4rem 1.1rem}
 }
+
+
+/* ==========================================================================
+   18. EMBED SLOT (donate page)
+   A dashed box holding the place where an outside donation form will be
+   pasted in. It looks unfinished on purpose so nobody mistakes it for a
+   working "give" button. Delete the whole box once the real form is in.
+   ========================================================================== */
+.embed-slot{
+  background:var(--white);border:2px dashed #BFB8A6;border-radius:3px;
+  padding:2rem 1.6rem;text-align:center;
+}
+.embed-slot .eyebrow{color:var(--ink-soft)}
+.embed-slot h3{margin-bottom:.6rem}
+.embed-slot p{color:var(--ink-soft);font-size:.93rem;max-width:46ch;margin:0 auto 1rem}
+.embed-slot p:last-child{margin-bottom:0}

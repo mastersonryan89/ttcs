@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;600;700;800&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/style.css?v=3">
 </head>
 <body>
 <a class="skip" href="#main">Skip to main content</a>
@@ -29,12 +29,29 @@
     </a>
     <nav class="site-nav" id="siteNav" aria-label="Main menu">
       <a href="index.html">Home</a>
-      <a href="about.html" aria-current="page">About Us</a>
-      <a href="programs.html">Our Programs</a>
+      <a href="about.html" aria-current="page">About</a>
+      <a href="programs.html">Programs</a>
       <a href="why-choose-us.html">Why Choose Us</a>
-      <a href="impact.html">Our Impact</a>
-      <a href="get-involved.html">Get Involved</a>
-      <a href="contact.html">Contact</a>
+      <a href="impact.html">Impact</a>
+      <div class="has-sub">
+        <a href="get-involved.html">Get Involved</a>
+        <button class="sub-toggle" type="button" aria-expanded="false" aria-controls="sub-get-involved">
+          <span class="sr-only">More under Get Involved</span>
+        </button>
+        <ul class="subnav" id="sub-get-involved">
+          <li><a href="employers.html">Employer partnerships</a></li>
+          <li><a href="donate.html">Donate</a></li>
+        </ul>
+      </div>
+      <div class="has-sub">
+        <a href="contact.html">Contact</a>
+        <button class="sub-toggle" type="button" aria-expanded="false" aria-controls="sub-contact">
+          <span class="sr-only">More under Contact</span>
+        </button>
+        <ul class="subnav" id="sub-contact">
+          <li><a href="looking-for-services.html">Looking for services?</a></li>
+        </ul>
+      </div>
       <a class="btn btn-red" href="donate.html">Donate</a>
     </nav>
     <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="siteNav">
@@ -328,6 +345,20 @@
 <script>
 document.documentElement.classList.add('js');
 
+/* close every drop-down in the main menu */
+function closeSubmenus(except){
+  document.querySelectorAll('.has-sub').forEach(function(group){
+    if(group === except) return;
+    var button = group.querySelector('.sub-toggle');
+    /* if focus is sitting inside the menu we are about to hide, move it
+       back to the button so keyboard users do not lose their place */
+    if(group.contains(document.activeElement) && button &&
+       document.activeElement !== button){ button.focus(); }
+    group.classList.remove('is-open');
+    if(button) button.setAttribute('aria-expanded','false');
+  });
+}
+
 /* mobile menu open/close */
 var toggle = document.getElementById('navToggle');
 var nav = document.getElementById('siteNav');
@@ -336,8 +367,28 @@ if(toggle && nav){
     var open = nav.classList.toggle('is-open');
     toggle.setAttribute('aria-expanded', open);
     toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    if(!open) closeSubmenus();
   });
 }
+
+/* drop-down menus — the chevron buttons next to Get Involved and Contact */
+document.querySelectorAll('.sub-toggle').forEach(function(button){
+  button.addEventListener('click', function(){
+    var group = button.parentNode;
+    var open = !group.classList.contains('is-open');
+    closeSubmenus(group);
+    group.classList.toggle('is-open', open);
+    button.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+});
+
+/* click anywhere else, or press Escape, to close them */
+document.addEventListener('click', function(e){
+  if(!e.target.closest || !e.target.closest('.has-sub')) closeSubmenus();
+});
+document.addEventListener('keydown', function(e){
+  if(e.key === 'Escape' || e.key === 'Esc') closeSubmenus();
+});
 
 /* fade sections in as you scroll */
 if('IntersectionObserver' in window){

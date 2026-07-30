@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;600;700;800&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/style.css?v=3">
 </head>
 <body>
 <a class="skip" href="#main">Skip to main content</a>
@@ -29,12 +29,29 @@
     </a>
     <nav class="site-nav" id="siteNav" aria-label="Main menu">
       <a href="index.html">Home</a>
-      <a href="about.html">About Us</a>
-      <a href="programs.html">Our Programs</a>
+      <a href="about.html">About</a>
+      <a href="programs.html">Programs</a>
       <a href="why-choose-us.html">Why Choose Us</a>
-      <a href="impact.html">Our Impact</a>
-      <a href="get-involved.html" aria-current="page">Get Involved</a>
-      <a href="contact.html">Contact</a>
+      <a href="impact.html">Impact</a>
+      <div class="has-sub is-current">
+        <a href="get-involved.html">Get Involved</a>
+        <button class="sub-toggle" type="button" aria-expanded="false" aria-controls="sub-get-involved">
+          <span class="sr-only">More under Get Involved</span>
+        </button>
+        <ul class="subnav" id="sub-get-involved">
+          <li><a href="employers.html" aria-current="page">Employer partnerships</a></li>
+          <li><a href="donate.html">Donate</a></li>
+        </ul>
+      </div>
+      <div class="has-sub">
+        <a href="contact.html">Contact</a>
+        <button class="sub-toggle" type="button" aria-expanded="false" aria-controls="sub-contact">
+          <span class="sr-only">More under Contact</span>
+        </button>
+        <ul class="subnav" id="sub-contact">
+          <li><a href="looking-for-services.html">Looking for services?</a></li>
+        </ul>
+      </div>
       <a class="btn btn-red" href="donate.html">Donate</a>
     </nav>
     <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="siteNav">
@@ -52,7 +69,14 @@
   <div class="wrap">
     <span class="eyebrow">Employer partnerships</span>
     <h1>Hire Ready. Hire Local.</h1>
-    
+    <p class="tagline">Second Chance Staffing</p>
+    <p>You have a position open and you need someone who will still be there in six months.
+       We work with motivated candidates who have completed job readiness training before
+       they reach your interview &mdash; and we stay involved after the hire.</p>
+    <div class="hero-buttons">
+      <a class="btn btn-red" href="contact.html">Talk to us about hiring</a>
+      <a class="btn btn-white" href="#how">How it works</a>
+    </div>
   </div>
   <div class="flagline" aria-hidden="true">
     <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
@@ -60,15 +84,302 @@
 </section>
 
 <!-- =========================================================
-     PAGE CONTENT — built in a later session
+     THE BUSINESS CASE
      ========================================================= -->
 <section class="section">
-  <div class="wrap section-head reveal">
-    <span class="eyebrow">Coming next</span>
-    <h2>This page is next on the build list</h2>
-    <p>The layout is planned and the design system is ready. Tell Claude Code what you want here
-       and it will be built into this file.</p>
-    <a class="btn btn-outline" href="index.html">Back to home</a>
+  <div class="wrap split reveal">
+    <div>
+      <span class="eyebrow">Why this works</span>
+      <h2>This is a staffing solution, not a favor</h2>
+      <p>Second chance hiring gets talked about as charity. It is not. It is access to a pool of
+         workers most of your competitors are not looking at, at a time when almost everyone is
+         short-staffed.</p>
+      <p>What makes the difference is not goodwill &mdash; it is preparation and follow-through.
+         Our candidates come through Workforce Development first: r&eacute;sum&eacute;, interview
+         practice, workplace expectations, and an honest plan for how to talk about a record.
+         By the time we send someone to you, they have done the work.</p>
+      <p>And you are not on your own afterward. When something comes up in month two, you call
+         one person who already knows the employee and the situation.</p>
+      <a class="btn btn-outline" href="programs.html">See our programs</a>
+    </div>
+    <div class="photo-slot">
+      <b>Photo needed</b>
+      <span>A participant in work clothes on a real job site, or a first day on a partner worksite</span>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     WHAT YOU GET
+     ========================================================= -->
+<section class="section section-white">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">What you get</span>
+      <h2>What a partnership actually includes</h2>
+      <p>No fee to post a position with us, and no obligation to hire anyone we send.</p>
+    </div>
+    <div class="card-grid cols-3">
+
+      <article class="card reveal">
+        <h3>Pre-screened candidates</h3>
+        <p>We meet every person before you do. You get candidates matched to the role you
+           described, not a stack of applications to sort through.</p>
+      </article>
+
+      <article class="card reveal">
+        <h3>Job readiness completed first</h3>
+        <p>R&eacute;sum&eacute;, interview preparation, workplace expectations and communication
+           are covered before the referral, not after the hire.</p>
+      </article>
+
+      <article class="card reveal">
+        <h3>Retention support after day one</h3>
+        <p>We stay in contact with the employee. Transportation, housing and recovery are the
+           things that end placements early, and those are the things we work on.</p>
+      </article>
+
+      <article class="card reveal">
+        <h3>One point of contact</h3>
+        <p>A named staff member for your account. Not a queue, not a form &mdash; a phone number
+           and a person who knows your business and the people we sent you.</p>
+      </article>
+
+      <article class="card reveal">
+        <h3>Help with hiring incentives</h3>
+        <p>Federal and state programs exist that reduce the cost and the risk of these hires.
+           We help you find out which ones your position qualifies for.</p>
+      </article>
+
+      <article class="card reveal">
+        <h3>Honest matching</h3>
+        <p>If someone is not right for your role, we say so. Sending you a bad fit costs us the
+           relationship, and it costs the participant a job. Neither is worth it.</p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     HOW IT WORKS
+     ========================================================= -->
+<section class="section" id="how">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">How it works</span>
+      <h2>Four steps, and the first one is a phone call</h2>
+      <p>There is no contract to sign to get started and no cost to find out whether this fits.</p>
+    </div>
+    <div class="card-grid cols-4">
+
+      <article class="card reveal">
+        <span class="badge">Step one</span>
+        <h3>Tell us about the role</h3>
+        <p>Shift, pay, location, what the work is actually like, and what would get somebody
+           removed from it. The last one matters as much as the first.</p>
+      </article>
+
+      <article class="card reveal">
+        <span class="badge">Step two</span>
+        <h3>We match candidates</h3>
+        <p>We put forward people whose skills, schedule and transportation fit the position.
+           If we do not have anyone right for it, we tell you that too.</p>
+      </article>
+
+      <article class="card reveal">
+        <span class="badge">Step three</span>
+        <h3>You interview and decide</h3>
+        <p>Your hiring process, your standards, your call. We prepare candidates for it; we do
+           not ask you to lower the bar.</p>
+      </article>
+
+      <article class="card reveal">
+        <span class="badge">Step four</span>
+        <h3>We stay involved</h3>
+        <p>We check in with the employee and with you through the first months. Problems get
+           handled while they are still small.</p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     HIRING INCENTIVES — navy band.
+     NOTE FOR RYAN: the Work Opportunity Tax Credit and the
+     Federal Bonding Program are real federal programs, and Ohio
+     runs bonding through the Department of Job and Family
+     Services. The page is worded carefully: it says these
+     programs exist and that we help employers look into them.
+     It does NOT claim we file the paperwork or guarantee
+     approval. Before launch, confirm with Tiffany how much of
+     this she wants to take on. If she wants to handle the WOTC
+     forms for employers, say "we file the WOTC paperwork" and
+     the wording will be strengthened. If she would rather just
+     point employers at it, leave this as it is.
+     ========================================================= -->
+<section class="section section-navy">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow" style="color:#8FA8CC">Incentives</span>
+      <h2>Programs that lower the cost and the risk</h2>
+      <p style="color:#C7D3E6">These are established federal and state programs, not something we
+         invented. Most employers we talk to have never been walked through them.</p>
+    </div>
+    <div class="card-grid cols-2">
+
+      <article class="card reveal">
+        <h3>Work Opportunity Tax Credit</h3>
+        <p>A federal tax credit for employers who hire from certain groups, including people with
+           a felony conviction hired within a year of conviction or release. The credit is claimed
+           against your federal tax liability and there is a certification deadline after the
+           start date, so it pays to ask before you hire, not after.</p>
+      </article>
+
+      <article class="card reveal">
+        <h3>Federal Bonding Program</h3>
+        <p>A no-cost fidelity bond that covers an employer against employee theft or dishonesty
+           for an initial period, at no charge to you or the employee. Ohio administers it through
+           the Department of Job and Family Services. It exists specifically to remove the risk
+           question from hiring decisions like this one.</p>
+      </article>
+
+      <article class="card reveal">
+        <h3>A candidate who is already supported</h3>
+        <p>Housing, transportation and recovery support are already in place through our other
+           programs. Those are the three reasons placements fail in the first ninety days, and
+           they are being worked on whether or not anything goes wrong at your site.</p>
+      </article>
+
+      <article class="card reveal">
+        <h3>No staffing agency markup</h3>
+        <p>We are a nonprofit. There is no placement fee, no hourly markup and no temp-to-hire
+           conversion charge. The person is your employee from day one, on your payroll,
+           at your rate.</p>
+      </article>
+
+    </div>
+    <p style="margin-top:2rem">
+      <a class="btn btn-white" href="contact.html">Ask which programs apply to you</a>
+    </p>
+  </div>
+</section>
+
+<!-- =========================================================
+     STRAIGHT ANSWERS — the objections employers have but
+     usually will not say out loud on a first call.
+     ========================================================= -->
+<section class="section section-white">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Straight answers</span>
+      <h2>The questions employers ask us</h2>
+      <p>Usually on the second call, once the polite part is over. Here they are answered up front.</p>
+    </div>
+    <div class="card-grid cols-2">
+
+      <article class="card reveal">
+        <h3>&ldquo;What will it cost me?&rdquo;</h3>
+        <p>Nothing. There is no fee to work with us, no placement charge and no contract. We are
+           funded as a nonprofit, not as a staffing agency.</p>
+      </article>
+
+      <article class="card reveal">
+        <h3>&ldquo;Do I have to hire whoever you send?&rdquo;</h3>
+        <p>No. You run your normal hiring process and make your own decision. A referral from us
+           is a candidate, not an obligation.</p>
+      </article>
+
+      <article class="card reveal">
+        <h3>&ldquo;Will I know about someone&rsquo;s background?&rdquo;</h3>
+        <p>Candidates are prepared to discuss their history with you directly and honestly. Your
+           own background check policy stays exactly as it is &mdash; we do not ask you to
+           change it or to waive it.</p>
+      </article>
+
+      <article class="card reveal">
+        <h3>&ldquo;What if it does not work out?&rdquo;</h3>
+        <p>Call us early. Most problems are transportation or scheduling and can be solved. If it
+           genuinely is not working, we will help you close it out cleanly and keep looking for
+           the right person for the role.</p>
+      </article>
+
+      <article class="card reveal">
+        <h3>&ldquo;What kind of roles do you fill?&rdquo;</h3>
+        <p>Entry-level and skilled positions across warehousing and logistics, construction and
+           the trades, manufacturing, food service, hospitality, cleaning and facilities,
+           landscaping, retail and general labor.</p>
+      </article>
+
+      <article class="card reveal">
+        <h3>&ldquo;How fast can you send someone?&rdquo;</h3>
+        <p>It depends on the role and who is ready when you call. Tell us your timeline on the
+           first call and we will tell you honestly whether we can meet it.</p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     WHAT WE ASK OF YOU
+     ========================================================= -->
+<section class="section">
+  <div class="wrap split split-top reveal">
+    <div>
+      <span class="eyebrow">What we ask</span>
+      <h2>What we need from a partner employer</h2>
+      <p>Three things, and none of them cost money.</p>
+      <p><b>Be specific with us.</b> A clear picture of the shift, the pay, the physical demands
+         and the deal-breakers lets us send you someone who will last. Vague postings produce
+         bad matches.</p>
+      <p><b>Judge the work.</b> Hold the same performance standard you hold everyone to. Our
+         participants are not asking for an easier job &mdash; they are asking for the job.</p>
+      <p><b>Call us early.</b> If attendance slips or something feels off, a call in week two is
+         a solvable problem. A call in month four is usually a termination.</p>
+      <a class="btn btn-outline" href="contact.html">Start the conversation</a>
+    </div>
+    <div class="note" style="margin:0">
+      <h3>Ready to talk?</h3>
+      <p>Call <a href="tel:6145020396">614-502-0396</a> or email
+         <a href="mailto:tiffany@ttc-solutions.org">tiffany@ttc-solutions.org</a> and describe the
+         position. We are at 1511 S. High St, Columbus, Monday to Friday, 10am to 6pm.</p>
+      <p>If it is easier, we will come to your site and see the work for ourselves. That usually
+         produces better matches than anything we could put in a job description.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     PARTNER LOGOS — empty until Ryan has permission to use
+     employer logos. Ask each partner before adding one.
+     ========================================================= -->
+<section class="section section-white">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Our partners</span>
+      <h2>Employers hiring with us</h2>
+      <p>Partner logos go here once we have written permission from each company to use them.</p>
+    </div>
+    <div class="logo-row reveal">
+      <div class="logo-slot">Partner logo</div>
+      <div class="logo-slot">Partner logo</div>
+      <div class="logo-slot">Partner logo</div>
+      <div class="logo-slot">Partner logo</div>
+      <div class="logo-slot">Partner logo</div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     CTA
+     ========================================================= -->
+<section class="cta-band">
+  <div class="wrap">
+    <h2>You have a position. We have people ready to work.</h2>
+    <p>One phone call is enough to find out whether this fits. There is no cost and no commitment.</p>
+    <a class="btn btn-white" href="contact.html">Talk to us about hiring</a>
   </div>
 </section>
 
@@ -126,6 +437,20 @@
 <script>
 document.documentElement.classList.add('js');
 
+/* close every drop-down in the main menu */
+function closeSubmenus(except){
+  document.querySelectorAll('.has-sub').forEach(function(group){
+    if(group === except) return;
+    var button = group.querySelector('.sub-toggle');
+    /* if focus is sitting inside the menu we are about to hide, move it
+       back to the button so keyboard users do not lose their place */
+    if(group.contains(document.activeElement) && button &&
+       document.activeElement !== button){ button.focus(); }
+    group.classList.remove('is-open');
+    if(button) button.setAttribute('aria-expanded','false');
+  });
+}
+
 /* mobile menu open/close */
 var toggle = document.getElementById('navToggle');
 var nav = document.getElementById('siteNav');
@@ -134,8 +459,28 @@ if(toggle && nav){
     var open = nav.classList.toggle('is-open');
     toggle.setAttribute('aria-expanded', open);
     toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    if(!open) closeSubmenus();
   });
 }
+
+/* drop-down menus — the chevron buttons next to Get Involved and Contact */
+document.querySelectorAll('.sub-toggle').forEach(function(button){
+  button.addEventListener('click', function(){
+    var group = button.parentNode;
+    var open = !group.classList.contains('is-open');
+    closeSubmenus(group);
+    group.classList.toggle('is-open', open);
+    button.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+});
+
+/* click anywhere else, or press Escape, to close them */
+document.addEventListener('click', function(e){
+  if(!e.target.closest || !e.target.closest('.has-sub')) closeSubmenus();
+});
+document.addEventListener('keydown', function(e){
+  if(e.key === 'Escape' || e.key === 'Esc') closeSubmenus();
+});
 
 /* fade sections in as you scroll */
 if('IntersectionObserver' in window){

@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;600;700;800&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/style.css?v=3">
 </head>
 <body>
 <a class="skip" href="#main">Skip to main content</a>
@@ -29,12 +29,29 @@
     </a>
     <nav class="site-nav" id="siteNav" aria-label="Main menu">
       <a href="index.html">Home</a>
-      <a href="about.html">About Us</a>
-      <a href="programs.html">Our Programs</a>
+      <a href="about.html">About</a>
+      <a href="programs.html">Programs</a>
       <a href="why-choose-us.html">Why Choose Us</a>
-      <a href="impact.html">Our Impact</a>
-      <a href="get-involved.html" aria-current="page">Get Involved</a>
-      <a href="contact.html">Contact</a>
+      <a href="impact.html">Impact</a>
+      <div class="has-sub">
+        <a href="get-involved.html" aria-current="page">Get Involved</a>
+        <button class="sub-toggle" type="button" aria-expanded="false" aria-controls="sub-get-involved">
+          <span class="sr-only">More under Get Involved</span>
+        </button>
+        <ul class="subnav" id="sub-get-involved">
+          <li><a href="employers.html">Employer partnerships</a></li>
+          <li><a href="donate.html">Donate</a></li>
+        </ul>
+      </div>
+      <div class="has-sub">
+        <a href="contact.html">Contact</a>
+        <button class="sub-toggle" type="button" aria-expanded="false" aria-controls="sub-contact">
+          <span class="sr-only">More under Contact</span>
+        </button>
+        <ul class="subnav" id="sub-contact">
+          <li><a href="looking-for-services.html">Looking for services?</a></li>
+        </ul>
+      </div>
       <a class="btn btn-red" href="donate.html">Donate</a>
     </nav>
     <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="siteNav">
@@ -53,6 +70,9 @@
     <span class="eyebrow">Get involved</span>
     <h1>Get Involved</h1>
     <p class="tagline">Become part of the change.</p>
+    <p>Reentry and recovery are community work. There is a role here for a few hours a month,
+       for an organization looking to coordinate, for an employer with a position to fill, and
+       for a funder who wants their money to reach the ground.</p>
   </div>
   <div class="flagline" aria-hidden="true">
     <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
@@ -60,15 +80,328 @@
 </section>
 
 <!-- =========================================================
-     PAGE CONTENT — built in a later session
+     FOUR WAYS IN — jump links down the page
      ========================================================= -->
 <section class="section">
-  <div class="wrap section-head reveal">
-    <span class="eyebrow">Coming next</span>
-    <h2>This page is next on the build list</h2>
-    <p>The layout is planned and the design system is ready. Tell Claude Code what you want here
-       and it will be built into this file.</p>
-    <a class="btn btn-outline" href="index.html">Back to home</a>
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Four ways in</span>
+      <h2>Find the one that fits what you have</h2>
+      <p>Time, reach, jobs or funding. Every one of these makes a different part of the work
+         possible.</p>
+    </div>
+    <div class="card-grid cols-4">
+
+      <article class="card reveal">
+        <h3>Volunteer</h3>
+        <p>Teach a skill, mentor, run mock interviews or help at an event.</p>
+        <a href="#volunteer">Ways to volunteer &rarr;</a>
+      </article>
+
+      <article class="card reveal">
+        <h3>Partner</h3>
+        <p>For agencies, faith communities, civic groups and other nonprofits.</p>
+        <a href="#partner">Become a partner &rarr;</a>
+      </article>
+
+      <article class="card reveal">
+        <h3>Hire</h3>
+        <p>Pre-screened, motivated candidates through Second Chance Staffing.</p>
+        <a href="#employers">Employer partnerships &rarr;</a>
+      </article>
+
+      <article class="card reveal">
+        <h3>Give</h3>
+        <p>Fund the work directly, or donate the goods our participants need.</p>
+        <a href="#give">Ways to give &rarr;</a>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     VOLUNTEER
+     NOTE FOR RYAN: the six volunteer roles below are the ones
+     that follow from our live programs. Confirm with Tiffany
+     which she actually wants to recruit for right now, and say
+     "change the volunteer roles" to swap any of them out.
+     ========================================================= -->
+<section class="section section-white" id="volunteer">
+  <div class="wrap split reveal">
+    <div>
+      <span class="eyebrow">Volunteer</span>
+      <h2>Bring the skill you already have</h2>
+      <p>The most useful volunteers are not the ones who know reentry. They are the ones who know
+         something concrete &mdash; how a budget works, how an interview goes, how to fix a
+         r&eacute;sum&eacute; &mdash; and are willing to show up on a schedule.</p>
+      <p>Consistency matters more than hours. A person who comes every other Tuesday for six months
+         is worth more to a participant than a large group that comes once.</p>
+      <a class="btn btn-outline" href="contact.html">Ask about volunteering</a>
+    </div>
+    <div class="photo-slot">
+      <b>Photo needed</b>
+      <span>A volunteer working one-on-one with a participant at a table, papers between them</span>
+    </div>
+  </div>
+
+  <div class="wrap" style="margin-top:2.6rem">
+    <div class="card-grid cols-3">
+
+      <article class="card reveal">
+        <h3>Teach a life skills class</h3>
+        <p>Financial literacy, communication, conflict resolution, goal setting or time
+           management. Bring the subject; we handle the room and the participants.</p>
+      </article>
+
+      <article class="card reveal">
+        <h3>Mentor one-on-one</h3>
+        <p>Meet with the same participant on a regular schedule and be a steady presence while
+           they rebuild. Training and boundaries are covered before you start.</p>
+      </article>
+
+      <article class="card reveal">
+        <h3>Run mock interviews</h3>
+        <p>Sit on the other side of the table so the first real interview is not the first one.
+           Especially valuable if you have hired people before.</p>
+      </article>
+
+      <article class="card reveal">
+        <h3>Review r&eacute;sum&eacute;s</h3>
+        <p>Work through r&eacute;sum&eacute;s and applications with participants in our workforce
+           development program, including how to speak about a record honestly.</p>
+      </article>
+
+      <article class="card reveal">
+        <h3>Lend a professional skill</h3>
+        <p>Accounting, legal, IT, design, grant writing. Small organizations run on donated
+           expertise, and a few hours from the right person goes a long way.</p>
+      </article>
+
+      <article class="card reveal">
+        <h3>Help at events and drives</h3>
+        <p>Setup, sorting donations, staffing a table, cooking, cleanup. Good for groups, and a
+           straightforward first way to see the work up close.</p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     HOW VOLUNTEERING STARTS
+     NOTE FOR RYAN: this describes a four-step process. Confirm
+     with Tiffany whether volunteers need a background check or
+     references, and how often orientation runs. If either is
+     required, say "add background checks to the volunteer
+     steps" and it will go into step three.
+     ========================================================= -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">How it starts</span>
+      <h2>What happens after you reach out</h2>
+      <p>No application to fill out and no waiting to hear back. It starts with a conversation.</p>
+    </div>
+    <div class="card-grid cols-4">
+
+      <article class="card reveal">
+        <span class="badge">Step one</span>
+        <h3>You call or email</h3>
+        <p>Tell us what you would like to do and roughly when you are free. If you are not sure
+           what you would be good at, say that instead &mdash; that is a normal place to start.</p>
+      </article>
+
+      <article class="card reveal">
+        <span class="badge">Step two</span>
+        <h3>We sit down together</h3>
+        <p>A short conversation at our High Street office about the work, what you are walking
+           into and what would suit you. Usually under half an hour.</p>
+      </article>
+
+      <article class="card reveal">
+        <span class="badge">Step three</span>
+        <h3>Orientation</h3>
+        <p>What to expect from participants, where the boundaries are and why confidentiality is
+           not optional. Short, practical, and it protects everybody.</p>
+      </article>
+
+      <article class="card reveal">
+        <span class="badge">Step four</span>
+        <h3>You get matched</h3>
+        <p>We place you with a program and a schedule that fits, and you have a staff contact
+           from then on. If it turns out not to fit, we find you something else.</p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     PARTNER — navy band. Eyebrow and lead text use inline
+     light-blue so they stay readable on the dark background.
+     ========================================================= -->
+<section class="section section-navy" id="partner">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow" style="color:#8FA8CC">Partner with us</span>
+      <h2>Organizations that make the whole thing work</h2>
+      <p style="color:#C7D3E6">For county agencies, treatment providers, faith communities, civic
+         groups, schools and other nonprofits working the same streets we do.</p>
+    </div>
+    <div class="card-grid cols-2">
+
+      <article class="card reveal">
+        <h3>Refer the people you cannot serve</h3>
+        <p>Case managers, probation officers and discharge planners send us clients whose needs
+           cross employment, housing and recovery at the same time. Call and describe the
+           situation; we will tell you honestly whether we are the right fit.</p>
+      </article>
+
+      <article class="card reveal">
+        <h3>Take the referrals we cannot serve</h3>
+        <p>Partnership runs both directions. When someone needs specialized treatment, legal help
+           or a service outside our scope, we want somewhere real to send them.</p>
+      </article>
+
+      <article class="card reveal">
+        <h3>Bring a service to our space</h3>
+        <p>Hold a clinic, a benefits enrollment session, a legal aid hour or a licensing
+           workshop at our office. Meeting people where they already come removes the
+           transportation barrier that kills most appointments.</p>
+      </article>
+
+      <article class="card reveal">
+        <h3>Sponsor or fund a program</h3>
+        <p>Businesses, congregations and foundations can underwrite a specific program rather
+           than giving into a general fund. You will know what your money paid for.</p>
+      </article>
+
+      <article class="card reveal">
+        <h3>Open your congregation or membership</h3>
+        <p>Faith communities and civic groups reach volunteers, employers and landlords we
+           cannot reach on our own. Introductions are worth as much as donations.</p>
+      </article>
+
+      <article class="card reveal">
+        <h3>Collaborate on funding</h3>
+        <p>We are open to joint applications and shared-outcome grants with partners whose
+           programs complement ours. Reach out early in the cycle, not the week before.</p>
+      </article>
+
+    </div>
+    <p style="margin-top:2rem">
+      <a class="btn btn-white" href="contact.html">Start a partnership conversation</a>
+    </p>
+  </div>
+</section>
+
+<!-- =========================================================
+     EMPLOYERS — short teaser, full detail on employers.html
+     ========================================================= -->
+<section class="section section-white" id="employers">
+  <div class="wrap split reveal">
+    <div class="photo-slot">
+      <b>Photo needed</b>
+      <span>Handshake at the end of a job interview, or a first day on a partner worksite</span>
+    </div>
+    <div>
+      <span class="eyebrow">For employers</span>
+      <h2>Fill the position, keep the hire</h2>
+      <p>Second Chance Staffing connects you with pre-screened, motivated candidates who have
+         been through job readiness training before they reach your interview.</p>
+      <p>Support does not stop at the offer letter. Hiring incentives and retention support come
+         with the placement, so when something comes up in the first few months you have someone
+         to call who already knows the person.</p>
+      <a class="btn btn-outline" href="employers.html">Employer partnerships</a>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     GIVE
+     NOTE FOR RYAN: the in-kind list is the standard set of
+     reentry needs. Confirm with Tiffany what she actually has
+     room to store and wants right now, then say "update the
+     in-kind list". Also add the EIN here once you have the
+     determination letter.
+     ========================================================= -->
+<section class="section" id="give">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Ways to give</span>
+      <h2>Money moves fastest, but it is not the only thing we need</h2>
+      <p>Tiff Top Community Solutions is a 501(c)(3) nonprofit. Gifts are tax-deductible to the
+         extent allowed by law, and every donation gets a receipt.</p>
+    </div>
+    <div class="card-grid cols-3">
+
+      <article class="card reveal">
+        <h3>Give once</h3>
+        <p>A single gift, any amount, going straight into the programs that are running now.</p>
+        <a href="donate.html">Donate today &rarr;</a>
+      </article>
+
+      <article class="card reveal">
+        <h3>Give monthly</h3>
+        <p>Recurring gifts are the ones that let us commit to a participant past this month.
+           Predictable income is what turns a program into a service.</p>
+        <a href="donate.html">Set up monthly giving &rarr;</a>
+      </article>
+
+      <article class="card reveal">
+        <h3>Give goods</h3>
+        <p>Interview and work clothing, boots and safety gear, hygiene supplies, bus passes,
+           gift cards for groceries and gas, household basics for a first apartment.</p>
+        <a href="contact.html">Ask what we need &rarr;</a>
+      </article>
+
+    </div>
+
+    <div class="note reveal">
+      <h3>Before you drop off a donation</h3>
+      <p>Please call ahead on 614-502-0396. We are a small organization with limited storage, and
+         a quick call means what you bring is something we can actually use and place. Our hours
+         are Monday to Friday, 10am to 6pm, at 1511 S. High St.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     LOOKING FOR SERVICES — this page draws people who need
+     help, not just people offering it. Send them somewhere
+     useful rather than letting them bounce.
+     ========================================================= -->
+<section class="section section-white">
+  <div class="wrap split split-top reveal">
+    <div>
+      <span class="eyebrow">Looking for help yourself?</span>
+      <h2>You are on the wrong page, and that is easy to fix</h2>
+      <p>This page is for people who want to support the work. If you or someone in your family
+         needs housing, work or support in recovery, we have a page written for you.</p>
+      <p>There is no form to fill out. Call 614-502-0396 or come to 1511 S. High St between 10am
+         and 6pm, Monday to Friday, and you will talk to a person.</p>
+      <a class="btn btn-outline" href="looking-for-services.html">Looking for services?</a>
+    </div>
+    <div class="note" style="margin:0">
+      <h3>Family and friends</h3>
+      <p>If you are trying to help someone else, you are welcome to call and ask questions on
+         their behalf. We will tell you what we can and what the person needs to do themselves.</p>
+      <p>What we cannot do is enroll someone who has not decided to come in. That first step has
+         to be theirs.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     CTA
+     ========================================================= -->
+<section class="cta-band">
+  <div class="wrap">
+    <h2>Tell us what you would like to do</h2>
+    <p>Volunteer, partner, hire or give &mdash; the next step is the same. Call us or send a
+       message and we will take it from there.</p>
+    <a class="btn btn-white" href="contact.html">Contact us</a>
   </div>
 </section>
 
@@ -126,6 +459,20 @@
 <script>
 document.documentElement.classList.add('js');
 
+/* close every drop-down in the main menu */
+function closeSubmenus(except){
+  document.querySelectorAll('.has-sub').forEach(function(group){
+    if(group === except) return;
+    var button = group.querySelector('.sub-toggle');
+    /* if focus is sitting inside the menu we are about to hide, move it
+       back to the button so keyboard users do not lose their place */
+    if(group.contains(document.activeElement) && button &&
+       document.activeElement !== button){ button.focus(); }
+    group.classList.remove('is-open');
+    if(button) button.setAttribute('aria-expanded','false');
+  });
+}
+
 /* mobile menu open/close */
 var toggle = document.getElementById('navToggle');
 var nav = document.getElementById('siteNav');
@@ -134,8 +481,28 @@ if(toggle && nav){
     var open = nav.classList.toggle('is-open');
     toggle.setAttribute('aria-expanded', open);
     toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    if(!open) closeSubmenus();
   });
 }
+
+/* drop-down menus — the chevron buttons next to Get Involved and Contact */
+document.querySelectorAll('.sub-toggle').forEach(function(button){
+  button.addEventListener('click', function(){
+    var group = button.parentNode;
+    var open = !group.classList.contains('is-open');
+    closeSubmenus(group);
+    group.classList.toggle('is-open', open);
+    button.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+});
+
+/* click anywhere else, or press Escape, to close them */
+document.addEventListener('click', function(e){
+  if(!e.target.closest || !e.target.closest('.has-sub')) closeSubmenus();
+});
+document.addEventListener('keydown', function(e){
+  if(e.key === 'Escape' || e.key === 'Esc') closeSubmenus();
+});
 
 /* fade sections in as you scroll */
 if('IntersectionObserver' in window){

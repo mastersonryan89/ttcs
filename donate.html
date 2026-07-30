@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;600;700;800&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/style.css?v=3">
 </head>
 <body>
 <a class="skip" href="#main">Skip to main content</a>
@@ -29,13 +29,30 @@
     </a>
     <nav class="site-nav" id="siteNav" aria-label="Main menu">
       <a href="index.html">Home</a>
-      <a href="about.html">About Us</a>
-      <a href="programs.html">Our Programs</a>
+      <a href="about.html">About</a>
+      <a href="programs.html">Programs</a>
       <a href="why-choose-us.html">Why Choose Us</a>
-      <a href="impact.html">Our Impact</a>
-      <a href="get-involved.html">Get Involved</a>
-      <a href="contact.html">Contact</a>
-      <a class="btn btn-red" href="donate.html">Donate</a>
+      <a href="impact.html">Impact</a>
+      <div class="has-sub is-current">
+        <a href="get-involved.html">Get Involved</a>
+        <button class="sub-toggle" type="button" aria-expanded="false" aria-controls="sub-get-involved">
+          <span class="sr-only">More under Get Involved</span>
+        </button>
+        <ul class="subnav" id="sub-get-involved">
+          <li><a href="employers.html">Employer partnerships</a></li>
+          <li><a href="donate.html" aria-current="page">Donate</a></li>
+        </ul>
+      </div>
+      <div class="has-sub">
+        <a href="contact.html">Contact</a>
+        <button class="sub-toggle" type="button" aria-expanded="false" aria-controls="sub-contact">
+          <span class="sr-only">More under Contact</span>
+        </button>
+        <ul class="subnav" id="sub-contact">
+          <li><a href="looking-for-services.html">Looking for services?</a></li>
+        </ul>
+      </div>
+      <a class="btn btn-red" href="donate.html" aria-current="page">Donate</a>
     </nav>
     <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="siteNav">
       <span></span><span></span><span></span>
@@ -52,7 +69,14 @@
   <div class="wrap">
     <span class="eyebrow">Donate</span>
     <h1>Invest In Hope</h1>
-    
+    <p class="tagline">Renew. Restore. Rebuild.</p>
+    <p>Tiff Top Community Solutions is a 501(c)(3) nonprofit in south Columbus. Your gift pays
+       for the work happening at 1511 S. High St right now &mdash; not a campaign, not overhead
+       in another city.</p>
+    <div class="hero-buttons">
+      <a class="btn btn-red" href="#give">Donate today</a>
+      <a class="btn btn-white" href="#other">Other ways to give</a>
+    </div>
   </div>
   <div class="flagline" aria-hidden="true">
     <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
@@ -60,15 +84,228 @@
 </section>
 
 <!-- =========================================================
-     PAGE CONTENT — built in a later session
+     THE DONATION FORM GOES HERE
+     ---------------------------------------------------------
+     NOTE FOR RYAN — this is the one thing that has to happen
+     before this page can go live.
+
+     1. Set up a free nonprofit account with Givebutter
+        (givebutter.com) or Zeffy (zeffy.com). Both are free
+        to 501(c)(3) organizations. Zeffy takes zero fees;
+        Givebutter has more features and asks donors for an
+        optional tip. Either is fine.
+     2. Build one donation form in that account. Turn on the
+        monthly-giving option while you are in there.
+     3. They will give you a block of embed code.
+     4. Come back here and say: "paste the donation embed
+        code into donate.html" and hand it over. It replaces
+        the dashed box below, and the dashed box gets deleted.
+     5. Make a $1 test donation to yourself and confirm the
+        receipt email arrives before launch.
+
+     Until then the page is honest: it tells people how to
+     give by phone or in person rather than showing a button
+     that does not work.
      ========================================================= -->
-<section class="section">
-  <div class="wrap section-head reveal">
-    <span class="eyebrow">Coming next</span>
-    <h2>This page is next on the build list</h2>
-    <p>The layout is planned and the design system is ready. Tell Claude Code what you want here
-       and it will be built into this file.</p>
-    <a class="btn btn-outline" href="index.html">Back to home</a>
+<section class="section" id="give">
+  <div class="wrap split split-top reveal">
+    <div>
+      <span class="eyebrow">Give now</span>
+      <h2>Give once, or give every month</h2>
+      <p>A one-time gift funds what is in front of us this week &mdash; bus passes, work boots,
+         an application fee, a night that does not end on the street.</p>
+      <p>A monthly gift does something a one-time gift cannot. It lets us tell a participant
+         we will still be here in March. Predictable income is what turns a good intention into
+         a service somebody can count on.</p>
+      <p>Every donation is receipted. Gifts are tax-deductible to the extent allowed by law.</p>
+    </div>
+
+    <div class="embed-slot reveal">
+      <span class="eyebrow">Online giving</span>
+      <h3>The donation form goes here</h3>
+      <p>Our online giving form is being set up. Until it is live, we would rather tell you the
+         truth than show you a button that does not work.</p>
+      <p><b>To give today:</b> call <a href="tel:6145020396">614-502-0396</a> during office hours,
+         or come to 1511 S. High St, Columbus, OH 43207, Monday to Friday, 10am to 6pm.</p>
+      <p><a class="btn btn-red" href="tel:6145020396">Call 614-502-0396</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     WHERE THE MONEY GOES
+     NOTE FOR RYAN: there are deliberately no dollar amounts
+     here. "$25 buys a week of bus passes" is the kind of line
+     funders check, and if the number is off it costs more
+     trust than it earns. Once Tiffany confirms what these
+     things actually cost, say "add the dollar amounts to the
+     donate page" and they will go in.
+     ========================================================= -->
+<section class="section section-white">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Where it goes</span>
+      <h2>What your gift actually pays for</h2>
+      <p>We are a small organization. There is no marketing department here &mdash; money that
+         comes in goes out to the things below.</p>
+    </div>
+    <div class="card-grid cols-3">
+
+      <article class="card reveal">
+        <h3>Getting to work</h3>
+        <p>Bus passes and gas cards. Transportation is the single most common reason a placement
+           falls apart in the first month.</p>
+      </article>
+
+      <article class="card reveal">
+        <h3>Showing up ready</h3>
+        <p>Interview clothes, work boots, safety gear and tools. You cannot take the job if you
+           cannot show up dressed for it.</p>
+      </article>
+
+      <article class="card reveal">
+        <h3>Paperwork that unlocks everything</h3>
+        <p>State ID, birth certificates, Social Security cards, licensing and application fees.
+           Small costs that block everything behind them.</p>
+      </article>
+
+      <article class="card reveal">
+        <h3>Keeping a roof</h3>
+        <p>Housing search support and the deposits, application fees and first-week basics that
+           stand between someone and a stable address.</p>
+      </article>
+
+      <article class="card reveal">
+        <h3>The classes themselves</h3>
+        <p>Space, materials and staff time for life skills training, job readiness and the
+           peer-led support groups that run every week.</p>
+      </article>
+
+      <article class="card reveal">
+        <h3>Staying in touch</h3>
+        <p>The follow-up that happens after the job starts. It is the least visible part of the
+           work and the part that decides whether it lasts.</p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     OTHER WAYS TO GIVE
+     NOTE FOR RYAN: stock, IRA rollovers and donor-advised
+     funds are deliberately left off this list because each
+     one needs an account or a broker set up first, and it is
+     worse to advertise them and then not be able to accept
+     them. Say "add stock and DAF giving" once that is in
+     place.
+     ========================================================= -->
+<section class="section" id="other">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Other ways to give</span>
+      <h2>Not everything useful is money</h2>
+      <p>Several of these cost you nothing at all.</p>
+    </div>
+    <div class="card-grid cols-2">
+
+      <article class="card reveal">
+        <h3>Donate goods</h3>
+        <p>Interview and work clothing, boots and safety gear, hygiene supplies, bus passes,
+           grocery and gas gift cards, and household basics for a first apartment.</p>
+        <a href="contact.html">Ask what we need &rarr;</a>
+      </article>
+
+      <article class="card reveal">
+        <h3>Check with your employer</h3>
+        <p>Many companies match employee donations dollar for dollar, and some pay a grant for
+           volunteer hours. It is usually one form and it doubles your gift.</p>
+      </article>
+
+      <article class="card reveal">
+        <h3>Run a drive</h3>
+        <p>A workplace, congregation, school or team can collect the items above. Call first so
+           what you collect is something we have room to store and can place.</p>
+        <a href="get-involved.html">Get involved &rarr;</a>
+      </article>
+
+      <article class="card reveal">
+        <h3>Sponsor a program</h3>
+        <p>Businesses, congregations and foundations can underwrite one program rather than
+           giving into a general fund. You will know exactly what your money paid for.</p>
+        <a href="contact.html">Talk about sponsorship &rarr;</a>
+      </article>
+
+      <article class="card reveal">
+        <h3>Give a job instead</h3>
+        <p>For an employer, an open position is worth more than a check. Second Chance Staffing
+           costs you nothing and there is no obligation to hire.</p>
+        <a href="employers.html">Employer partnerships &rarr;</a>
+      </article>
+
+      <article class="card reveal">
+        <h3>Give time</h3>
+        <p>Teach a class, mentor, run mock interviews or lend a professional skill. Consistent
+           volunteers are as hard to find as funding.</p>
+        <a href="get-involved.html">Ways to volunteer &rarr;</a>
+      </article>
+
+    </div>
+
+    <div class="note reveal">
+      <h3>Before you drop off a donation</h3>
+      <p>Please call ahead on <a href="tel:6145020396">614-502-0396</a>. We are a small
+         organization with limited storage, and a quick call means what you bring is something we
+         can actually use and place. Our hours are Monday to Friday, 10am to 6pm, at
+         1511 S. High St.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     TAX + TRANSPARENCY
+     NOTE FOR RYAN: the EIN is left blank on purpose. Add it
+     the moment you have the IRS determination letter — say
+     "add our EIN" and give it to Claude Code. It goes here
+     and in the footer. Funders and corporate matching-gift
+     portals both ask for it, so a blank one costs real money.
+     ========================================================= -->
+<section class="section section-navy">
+  <div class="wrap split split-top reveal">
+    <div>
+      <span class="eyebrow" style="color:#8FA8CC">The fine print</span>
+      <h2>Tax deductibility and where you can check on us</h2>
+      <p style="color:#C7D3E6">Tiff Top Community Solutions is a 501(c)(3) charitable organization.
+         Donations are tax-deductible to the extent allowed by law. You will receive a written
+         receipt for every gift.</p>
+      <p style="color:#C7D3E6">We do not sell, rent or trade donor information. Ever. If you want
+         your gift kept anonymous, say so when you give and it will be.</p>
+      <p style="color:#C7D3E6">Questions about a donation, a receipt or a pledge? Call
+         614-502-0396 or email tiffany@ttc-solutions.org and you will get a person, not a ticket
+         number.</p>
+      <a class="btn btn-white" href="privacy.html">Read our privacy policy</a>
+    </div>
+    <div class="card" style="margin:0">
+      <h3>Organization details</h3>
+      <p><b>Legal name</b><br>Tiff Top Community Solutions</p>
+      <p style="margin-top:.7rem"><b>Address</b><br>1511 S. High St<br>Columbus, OH 43207</p>
+      <p style="margin-top:.7rem"><b>Phone</b><br>614-502-0396</p>
+      <p style="margin-top:.7rem"><b>Email</b><br>tiffany@ttc-solutions.org</p>
+      <p style="margin-top:.7rem"><b>EIN</b><br>Available on request while our determination
+         letter is being processed.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     CTA
+     ========================================================= -->
+<section class="cta-band">
+  <div class="wrap">
+    <h2>Give where you can see it land</h2>
+    <p>Your money stays in south Columbus and pays for the boots, the bus pass and the follow-up
+       call. Call us and we will tell you exactly what it went to.</p>
+    <a class="btn btn-white" href="tel:6145020396">Call 614-502-0396</a>
   </div>
 </section>
 
@@ -126,6 +363,20 @@
 <script>
 document.documentElement.classList.add('js');
 
+/* close every drop-down in the main menu */
+function closeSubmenus(except){
+  document.querySelectorAll('.has-sub').forEach(function(group){
+    if(group === except) return;
+    var button = group.querySelector('.sub-toggle');
+    /* if focus is sitting inside the menu we are about to hide, move it
+       back to the button so keyboard users do not lose their place */
+    if(group.contains(document.activeElement) && button &&
+       document.activeElement !== button){ button.focus(); }
+    group.classList.remove('is-open');
+    if(button) button.setAttribute('aria-expanded','false');
+  });
+}
+
 /* mobile menu open/close */
 var toggle = document.getElementById('navToggle');
 var nav = document.getElementById('siteNav');
@@ -134,8 +385,28 @@ if(toggle && nav){
     var open = nav.classList.toggle('is-open');
     toggle.setAttribute('aria-expanded', open);
     toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    if(!open) closeSubmenus();
   });
 }
+
+/* drop-down menus — the chevron buttons next to Get Involved and Contact */
+document.querySelectorAll('.sub-toggle').forEach(function(button){
+  button.addEventListener('click', function(){
+    var group = button.parentNode;
+    var open = !group.classList.contains('is-open');
+    closeSubmenus(group);
+    group.classList.toggle('is-open', open);
+    button.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+});
+
+/* click anywhere else, or press Escape, to close them */
+document.addEventListener('click', function(e){
+  if(!e.target.closest || !e.target.closest('.has-sub')) closeSubmenus();
+});
+document.addEventListener('keydown', function(e){
+  if(e.key === 'Escape' || e.key === 'Esc') closeSubmenus();
+});
 
 /* fade sections in as you scroll */
 if('IntersectionObserver' in window){
