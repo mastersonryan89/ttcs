@@ -77,6 +77,7 @@ Shot list:
 2. A group session or workshop in progress (backs of heads are fine — no releases needed)
 3. A one-on-one conversation at a desk
 4. The building exterior with signage
+1
 5. Two or three headshots for the team section
 
 To use one: save it into `assets/`, then say
@@ -86,9 +87,10 @@ To use one: save it into `assets/`, then say
 
 ## Before launch
 
-- [ ] **Connect the contact form.** It is built but goes nowhere until a host is chosen.
-      Instructions are in a comment at the top of the form in `contact.html`.
-      Send a test message and confirm it arrives before launch.
+- [ ] **Connect the two forms.** There is one on `contact.html` and one on
+      `looking-for-services.html`. Both are built but go nowhere until a host is chosen.
+      It is the same one-line fix for both — instructions are in a comment right above each
+      form. Send a test message from **both** pages and confirm they arrive before launch.
 - [ ] **Embed the Givebutter or Zeffy donation form on `donate.html`.** Right now the page
       shows a dashed box telling people to call instead. Step-by-step instructions are in a
       comment right above that box in `donate.html`. Make a $1 test donation before launch.
@@ -113,7 +115,7 @@ Each of these is marked with a **"NOTE FOR RYAN"** comment in the file, so you c
 |---|---|
 | `get-involved.html` | The six volunteer roles; whether volunteers need a background check or references; what in-kind donations she has room to store |
 | `employers.html` | How much of the tax-credit and bonding paperwork we actually help employers with. The page currently says we help them look into it, not that we file it |
-| `looking-for-services.html` | Whether people really can walk in without an appointment during office hours; any local Franklin County crisis numbers she wants added |
+| `looking-for-services.html` | Whether people really can walk in without an appointment during office hours; any local Franklin County crisis numbers she wants added; who gets the messages from the new form. **The page promises a reply within one business day** — someone has to actually check it every workday for that to stay true |
 | `donate.html` | What things actually cost, so we can add real dollar amounts. No made-up "$25 buys…" lines are on the page |
 | `impact.html` | Nothing to confirm — but do not let anyone fill the numbers in with estimates |
 

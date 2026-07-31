@@ -27,9 +27,18 @@ Primarily **other organizations**, in this order:
 3. Funders and grantmakers
 
 Individuals seeking services are a secondary audience served by one page
-(`looking-for-services.html`). **There is no online intake.** Intake happens in person.
-Never add an intake form, service-request form, or anything that collects participant
-or health information.
+(`looking-for-services.html`).
+
+**There is no online intake or enrollment.** Services start with a conversation in person.
+
+`contact.html` and `looking-for-services.html` each carry a *contact* form — added at Ryan's
+request in July 2026 because the team cannot answer every phone call, and a routed message
+beats a missed call. Those forms ask only: name, how to reach you, who you are / who it's
+for, what you need, and an optional short message. **They must never ask about health,
+treatment, recovery history, criminal record, immigration status or finances**, and the
+hint text tells people not to type those details in. Do not turn either one into an
+application, intake, or enrollment form. `privacy.html` describes both forms — if the
+fields change, that page changes with them.
 
 ## Tech decisions
 

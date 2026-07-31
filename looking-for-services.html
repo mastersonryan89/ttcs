@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Looking for Help? | Tiff Top Community Solutions</title>
-<meta name="description" content="If you need support with reentry, employment, housing or recovery in Columbus, Ohio, call 614-502-0396 or stop by 1511 S. High St.">
+<meta name="description" content="If you need support with reentry, employment, housing or recovery in Columbus, Ohio, call 614-502-0396, stop by 1511 S. High St, or send us a short message.">
 <link rel="icon" href="assets/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -94,11 +94,11 @@
 <section class="section" id="visit">
   <div class="wrap">
     <div class="section-head reveal">
-      <span class="eyebrow">Two ways to start</span>
-      <h2>There is no form to fill out</h2>
-      <p>You will talk to a real person. Nothing you say goes on a website.</p>
+      <span class="eyebrow">Three ways to start</span>
+      <h2>Reach out however is easiest</h2>
+      <p>Call, walk in, or send a short message. All three get you to a real person.</p>
     </div>
-    <div class="card-grid cols-2">
+    <div class="card-grid cols-3">
 
       <article class="card reveal">
         <h3>Call us</h3>
@@ -113,11 +113,166 @@
            our hours. You do not need an appointment and you do not need to bring anything.</p>
       </article>
 
+      <article class="card reveal">
+        <h3>Write to us</h3>
+        <p>If writing is easier than calling, use the short form below. Telling us what you
+           need helps us get back to you faster.</p>
+      </article>
+
     </div>
 
     <div class="note reveal">
       <h3>What it costs</h3>
       <p>Nothing. Our programs are free. We will never ask you for money to get help.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     SHORT MESSAGE FORM
+     ---------------------------------------------------------
+     IMPORTANT — THIS FORM IS NOT CONNECTED YET.
+     A plain HTML site cannot process a form by itself. Until a
+     host is chosen, anything sent here goes nowhere. This is
+     the same fix as the form on contact.html — do both at once:
+
+     NETLIFY     add  data-netlify="true"  to the <form> tag
+     CLOUDFLARE  same idea, follow their Pages Forms setup
+     FORMSPREE   set  action="https://formspree.io/f/YOURCODE"
+
+     Then send a test message from BOTH pages and confirm they
+     arrive before launch.
+
+     NOTE FOR RYAN: this form deliberately does not ask about
+     health, treatment, recovery history or criminal record.
+     It asks who you are and what you need, which is enough to
+     route the message to the right person. Keep it that way —
+     collecting the rest on a website creates a records problem
+     the organization does not want.
+     ========================================================= -->
+<section class="section" id="message">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Send a message</span>
+      <h2>Tell us what you need</h2>
+      <p>A few questions, and none of them are hard. You only answer what you want to answer.</p>
+    </div>
+
+    <div class="split split-top reveal">
+
+      <form class="form-wrap" name="services" method="POST" action="">
+
+        <!-- spam trap: real people never see this, bots fill it in -->
+        <p class="hp" aria-hidden="true">
+          <label>Leave this field empty <input name="company" tabindex="-1" autocomplete="off"></label>
+        </p>
+
+        <div class="field">
+          <label for="name">Your name <span class="req" aria-hidden="true">*</span></label>
+          <span class="hint" id="name-hint">First name is fine.</span>
+          <input type="text" id="name" name="name" autocomplete="name" required
+                 aria-describedby="name-hint">
+        </div>
+
+        <div class="form-row">
+          <div class="field">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" autocomplete="tel">
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" autocomplete="email">
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="reach">Best way to reach you</label>
+          <select id="reach" name="best_way_to_reach">
+            <option value="">No preference</option>
+            <option>Phone call</option>
+            <option>Text message</option>
+            <option>Email</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="who">Who is this for? <span class="req" aria-hidden="true">*</span></label>
+          <select id="who" name="asking_for" required>
+            <option value="">Choose one&hellip;</option>
+            <option>Myself</option>
+            <option>A family member or friend</option>
+            <option>Someone I work with</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="need">What do you need help with? <span class="req" aria-hidden="true">*</span></label>
+          <span class="hint" id="need-hint">Pick the biggest one. We will ask about the rest when
+            we talk.</span>
+          <select id="need" name="need" required aria-describedby="need-hint">
+            <option value="">Choose one&hellip;</option>
+            <option>Coming home from prison or jail</option>
+            <option>Finding a job</option>
+            <option>Getting hired somewhere that takes people with records</option>
+            <option>A place to live</option>
+            <option>Everyday skills &mdash; money, goals, getting organized</option>
+            <option>A support group</option>
+            <option>More than one of these</option>
+            <option>I am not sure yet</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="when">How soon do you need help?</label>
+          <select id="when" name="how_soon">
+            <option value="">Not sure</option>
+            <option>This week</option>
+            <option>This month</option>
+            <option>I am getting out soon and planning ahead</option>
+            <option>Just asking questions for now</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="message-body">Anything else you want us to know</label>
+          <span class="hint" id="message-hint">A sentence or two is plenty. Please leave out
+            medical, treatment and court details &mdash; those are better talked about in person,
+            not typed into a website.</span>
+          <textarea id="message-body" name="message" aria-describedby="message-hint"></textarea>
+        </div>
+
+        <div class="form-actions">
+          <button class="btn btn-red" type="submit">Send message</button>
+        </div>
+
+        <p class="form-note">This is not an application and it does not sign you up for anything.
+          It just tells us you are out there and what you need. Everything real starts with a
+          conversation in person.</p>
+
+      </form>
+
+      <div>
+        <div class="note">
+          <h3>If you need help right now</h3>
+          <p>Nobody watches this form at night or on weekends. <strong>If someone is in danger,
+             call 911.</strong> If you are in crisis or thinking about hurting yourself, call or
+             text <strong>988</strong>. It is free and someone answers 24 hours a day.</p>
+        </div>
+
+        <h3>What happens next</h3>
+        <p>A real person reads every message, and you will hear back from us <b>within one
+           business day</b>. We answer Monday through Friday, 10am to 6pm. If you write to us at
+           night or over the weekend, we will get to you the next day we are open.</p>
+        <p>That is why the questions above matter &mdash; when we already know what you need, your
+           message goes straight to the right person instead of starting over.</p>
+        <p><b>If you need help right away, call <a href="tel:6145020396">614-502-0396</a> or just
+           come in.</b> A five-minute conversation beats waiting on an email.</p>
+
+        <h3>What we do with it</h3>
+        <p>We use it to call you back. That is all. We do not sell it, trade it or post it
+           anywhere. Read the <a href="privacy.html">privacy policy</a> if you want the details.</p>
+      </div>
+
     </div>
   </div>
 </section>
