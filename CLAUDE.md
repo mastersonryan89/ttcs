@@ -83,14 +83,16 @@ built from an existing housing-resources PDF.
 A funder who spots a placeholder statistic stops trusting the organization. Leave them
 blank or delete the section until Ryan supplies verified counts.
 
-**Never describe peer staff as "certified."** Ohio's Certified Peer Recovery Supporter
-credential is regulated by OhioMHAS and requires training, background checks, and a state
-exam. Nobody on staff holds it yet. Peer Support Services and Case Management are both
-tagged "Launching 2026" — keep those badges until told otherwise.
+**All eight programs are live** as of 31 July 2026: Transition & Reentry, Workforce
+Development, Second Chance Staffing, Housing Assistance, Life Skills Training, Peer-Led
+Support Groups, Peer Support Services, Case Management. Ryan confirmed that day that the
+credentialed staff for the last two are in place, and the "Launching 2026" badges came off.
 
-**Six programs are live, two are not.** Live: Transition & Reentry, Workforce Development,
-Second Chance Staffing, Housing Assistance, Life Skills Training, Peer-Led Support Groups.
-Launching 2026: Peer Support Services, Case Management.
+**Still do not print the word "certified" without checking.** Ohio's Certified Peer Recovery
+Supporter credential is regulated by OhioMHAS — training, background checks, a state exam.
+Removing the badges was Ryan's call about staffing; it is not the same as clearance to write
+"certified peer specialists" on a funder-facing page. If a page needs that claim, confirm who
+holds the credential first. A funder can check.
 
 **No stock photography.** Photo placeholders are navy boxes that name the shot needed.
 Real phone photos will replace them. Keep the design working on typography and color alone
