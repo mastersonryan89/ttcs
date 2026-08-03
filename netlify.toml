@@ -1,0 +1,19 @@
+# Netlify settings for Tiff Top Community Solutions.
+#
+# There is no build step — the site is already finished HTML. This file just
+# tells Netlify "publish this folder as-is" and sets a few standard security
+# headers. You should not need to touch it.
+
+[build]
+  publish = "."
+  command = ""
+
+# Standard protections. These stop other websites from framing our pages
+# and stop browsers from guessing at file types.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "geolocation=(), microphone=(), camera=()"

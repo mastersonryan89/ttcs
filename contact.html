@@ -116,17 +116,15 @@
 <!-- =========================================================
      CONTACT FORM
      ---------------------------------------------------------
-     IMPORTANT — THIS FORM IS NOT CONNECTED YET.
-     A plain HTML site cannot process a form by itself. Until a
-     host is chosen, anything sent here goes nowhere.
+     THIS FORM IS CONNECTED TO NETLIFY.
+     Messages land in the Netlify dashboard under Forms > "contact",
+     and Netlify can email them to Tiffany as they come in.
+     Turn that on at: Netlify > Forms > Form notifications.
 
-     To switch it on, one of these:
-
-     NETLIFY   add  data-netlify="true"  to the <form> tag below
-     CLOUDFLARE  same idea, follow their Pages Forms setup
-     FORMSPREE   set  action="https://formspree.io/f/YOURCODE"
-
-     Then send a test message and confirm it arrives before launch.
+     After the site is live, send yourself a real test message from
+     this page and confirm it arrives before telling anyone the site
+     is open. Netlify only starts collecting once the site is
+     published — a test on your own computer will not show up.
      ========================================================= -->
 <section class="section section-white">
   <div class="wrap">
@@ -138,7 +136,11 @@
 
     <div class="split split-top reveal">
 
-      <form class="form-wrap" name="contact" method="POST" action="">
+      <form class="form-wrap" name="contact" method="POST" action="thank-you.html"
+            data-netlify="true" netlify-honeypot="company">
+
+        <!-- tells Netlify which form this is; required, and invisible to people -->
+        <input type="hidden" name="form-name" value="contact">
 
         <!-- spam trap: real people never see this, bots fill it in -->
         <p class="hp" aria-hidden="true">

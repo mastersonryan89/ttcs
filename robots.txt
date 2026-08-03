@@ -1,0 +1,7 @@
+# Tiff Top Community Solutions
+# Tells search engines they are welcome to list every page.
+
+User-agent: *
+Allow: /
+
+Sitemap: https://ttc-solutions.org/sitemap.xml

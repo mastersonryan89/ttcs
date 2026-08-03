@@ -131,17 +131,15 @@
 <!-- =========================================================
      SHORT MESSAGE FORM
      ---------------------------------------------------------
-     IMPORTANT — THIS FORM IS NOT CONNECTED YET.
-     A plain HTML site cannot process a form by itself. Until a
-     host is chosen, anything sent here goes nowhere. This is
-     the same fix as the form on contact.html — do both at once:
+     THIS FORM IS CONNECTED TO NETLIFY.
+     Messages land in the Netlify dashboard under Forms > "services",
+     kept separate from the ones sent through contact.html so it is
+     obvious which came from someone asking for help.
 
-     NETLIFY     add  data-netlify="true"  to the <form> tag
-     CLOUDFLARE  same idea, follow their Pages Forms setup
-     FORMSPREE   set  action="https://formspree.io/f/YOURCODE"
-
-     Then send a test message from BOTH pages and confirm they
-     arrive before launch.
+     This page promises a reply within one business day. Somebody has
+     to actually check these every workday for that to stay true — set
+     up the email notification at Netlify > Forms > Form notifications
+     so nobody has to remember to log in.
 
      NOTE FOR RYAN: this form deliberately does not ask about
      health, treatment, recovery history or criminal record.
@@ -160,7 +158,11 @@
 
     <div class="split split-top reveal">
 
-      <form class="form-wrap" name="services" method="POST" action="">
+      <form class="form-wrap" name="services" method="POST" action="thank-you.html"
+            data-netlify="true" netlify-honeypot="company">
+
+        <!-- tells Netlify which form this is; required, and invisible to people -->
+        <input type="hidden" name="form-name" value="services">
 
         <!-- spam trap: real people never see this, bots fill it in -->
         <p class="hp" aria-hidden="true">

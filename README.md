@@ -43,8 +43,12 @@ any more.
 | `donate.html` | Donate — needs the donation form pasted in |
 | `looking-for-services.html` | For people seeking help |
 | `privacy.html` · `terms.html` | Legal pages |
+| `thank-you.html` | Where both forms land after someone hits send |
+| `404.html` | Shown if someone follows a broken link |
 | `css/style.css` | **All styling.** Colors, fonts, spacing, layout |
 | `assets/` | Logo and photos |
+| `robots.txt` · `sitemap.xml` | Tell Google what to list. Not seen by visitors |
+| `netlify.toml` | Hosting settings. You should not need to touch it |
 
 The header and footer are copied into each page. That means the site works by just
 opening a file — no server needed. When the menu changes, tell Claude Code
@@ -69,7 +73,11 @@ Change one value there and it updates across the whole site.
 
 ## Photos we still need
 
-Every navy box with a diagonal pattern is a placeholder naming the shot needed.
+**The placeholders are currently hidden**, so the live site shows no empty photo boxes.
+They are all still in the pages — three rules at the end of the PHOTO PLACEHOLDERS
+section of `css/style.css` just stop them being drawn. Say *"show the photo placeholders
+again"* to see them while you are working out what to shoot.
+
 Phone photos are fine — real beats polished. Avoid stock photography entirely.
 
 Shot list:
@@ -77,20 +85,22 @@ Shot list:
 2. A group session or workshop in progress (backs of heads are fine — no releases needed)
 3. A one-on-one conversation at a desk
 4. The building exterior with signage
-1
 5. Two or three headshots for the team section
 
 To use one: save it into `assets/`, then say
-*"replace the photo placeholder on the homepage with assets/office.jpg"*.
+*"replace the photo placeholder on the homepage with assets/office.jpg"*. A real photo
+shows up straight away — the hiding rule only applies to the empty placeholders.
 
 ---
 
 ## Before launch
 
-- [ ] **Connect the two forms.** There is one on `contact.html` and one on
-      `looking-for-services.html`. Both are built but go nowhere until a host is chosen.
-      It is the same one-line fix for both — instructions are in a comment right above each
-      form. Send a test message from **both** pages and confirm they arrive before launch.
+- [ ] **Turn on form notification emails, then test both forms.** The forms are connected to
+      Netlify now, but Netlify only *collects* messages — it does not email them to anyone until
+      you say so. In Netlify go to **Forms › Form notifications**, add Tiffany's address, and do
+      it for both `contact` and `services`. Then send a real test message from **both** pages on
+      the live site and confirm it arrives. Forms do not work when you open the file on your own
+      computer — only once published.
 - [ ] **Embed the Givebutter or Zeffy donation form on `donate.html`.** Right now the page
       shows a dashed box telling people to call instead. Step-by-step instructions are in a
       comment right above that box in `donate.html`. Make a $1 test donation before launch.
@@ -99,12 +109,15 @@ To use one: save it into `assets/`, then say
       instead of showing figures we cannot source yet.
 - [ ] Add the EIN to the footer and to the Donate page once the determination letter arrives.
       Corporate matching-gift portals ask for it, so a blank one costs real money.
-- [ ] Add real photos
+- [ ] Add real photos *(not a launch blocker — the placeholders are hidden)*
 - [ ] Claim and fill in the Google Business Profile with matching address, phone, hours
 - [ ] Apply for Google for Nonprofits (unlocks the $10,000/month Ad Grant)
-- [ ] Point `TTC-solutions.org` at the host
+- [ ] Point `TTC-solutions.org` at Netlify — see **Publishing** below
 - [x] Write and add `privacy.html` and `terms.html`
 - [x] Build out Get Involved, Employers, Donate, Impact and Looking for Services
+- [x] Hide the photo placeholders so the site reads as finished without photos
+- [x] Connect both forms to Netlify, with a `thank-you.html` page after sending
+- [x] Add `404.html`, `robots.txt` and `sitemap.xml`
 
 ### Things to check with Tiffany
 
@@ -123,6 +136,42 @@ Each of these is marked with a **"NOTE FOR RYAN"** comment in the file, so you c
 
 ## Publishing
 
-The site is a folder of files, so hosting is free and simple.
-Recommended: Cloudflare Pages or Netlify. Drag the folder in, connect the domain, done.
-Say **"help me publish this"** in Claude Code when you're ready.
+The site is a folder of files, so hosting is free. We are using **Netlify**, and keeping
+the domain registered where it already is, at **Squarespace**.
+
+Two different jobs, often confused:
+
+- **Squarespace registers the domain.** It owns the name `TTC-solutions.org`. Keep it there.
+- **Netlify hosts the site.** It serves the actual pages. Free, and no monthly bill.
+
+Squarespace *also* sells website hosting, but it is a closed builder — there is no way to
+give it this folder. Hosting the site there would mean rebuilding all fourteen pages by
+hand inside their editor and paying roughly $16–25 a month. We are not doing that.
+
+### Step 1 — put the site on Netlify
+
+1. Make a free account at **netlify.com**.
+2. Choose **Add new site › Deploy manually** and drag this whole folder onto the page.
+3. It goes live in about thirty seconds at a temporary address like
+   `random-name-12345.netlify.app`. Open it and click through every page.
+4. Rename it to something sane under **Site configuration › Change site name**.
+
+To publish a change later, drag the folder in again. It replaces what is there.
+
+### Step 2 — point the domain at it
+
+1. In Netlify: **Domain management › Add a domain**, and enter `ttc-solutions.org`.
+2. Netlify will show you the exact DNS records to create. **Copy what it shows you** —
+   do not use records written down anywhere else, including here, because they change.
+3. In Squarespace, open the settings for `TTC-solutions.org` and find **DNS settings**.
+   Add the records Netlify gave you.
+4. Wait. It usually takes under an hour, sometimes up to a day. Netlify turns on the
+   padlock (the HTTPS certificate) by itself once the domain resolves — free, nothing to buy.
+
+### Step 3 — before you tell anyone
+
+Work the **Before launch** checklist above. The two that genuinely block a launch are the
+**form notification emails** and the **donation form**. A site that quietly swallows
+messages from someone in reentry is worse than no site at all.
+
+Say **"help me publish this"** in Claude Code if you get stuck on any step.

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  A list of every page, handed to Google so nothing gets missed.
+  The thank-you and page-not-found pages are left out on purpose.
+  If a page is ever added or renamed, this file needs the same change.
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <url>
+    <loc>https://ttc-solutions.org/</loc>
+    <lastmod>2026-08-03</lastmod>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://ttc-solutions.org/looking-for-services.html</loc>
+    <lastmod>2026-08-03</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://ttc-solutions.org/programs.html</loc>
+    <lastmod>2026-08-03</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://ttc-solutions.org/contact.html</loc>
+    <lastmod>2026-08-03</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://ttc-solutions.org/about.html</loc>
+    <lastmod>2026-08-03</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ttc-solutions.org/why-choose-us.html</loc>
+    <lastmod>2026-08-03</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ttc-solutions.org/employers.html</loc>
+    <lastmod>2026-08-03</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ttc-solutions.org/get-involved.html</loc>
+    <lastmod>2026-08-03</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ttc-solutions.org/donate.html</loc>
+    <lastmod>2026-08-03</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ttc-solutions.org/impact.html</loc>
+    <lastmod>2026-08-03</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ttc-solutions.org/privacy.html</loc>
+    <lastmod>2026-08-03</lastmod>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://ttc-solutions.org/terms.html</loc>
+    <lastmod>2026-08-03</lastmod>
+    <priority>0.3</priority>
+  </url>
+
+</urlset>

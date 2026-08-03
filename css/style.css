@@ -293,6 +293,24 @@ section[id],h2[id],h3[id]{scroll-margin-top:90px}
   letter-spacing:.2em;color:#FF8A9B;position:relative}
 .photo-slot span{font-size:.86rem;margin-top:.5rem;position:relative;max-width:26ch}
 
+/* --------------------------------------------------------------------------
+   LAUNCH MODE — no real photos yet
+   These three rules hide every photo placeholder so the live site does not
+   show visitors our notes about what to shoot. Nothing is deleted: the
+   placeholders are all still in the pages, just not drawn on screen.
+
+   TO BRING THEM BACK, say "show the photo placeholders again" — or delete
+   the three rules below. Once a real photo replaces a placeholder it shows
+   up regardless, because a real <img> is not a .photo-slot.
+   -------------------------------------------------------------------------- */
+.photo-slot{display:none}
+
+/* A two-column band whose photo half is hidden becomes a single column,
+   and the text is held to a comfortable reading width instead of stretching
+   the full page. */
+.split:has(> .photo-slot){grid-template-columns:1fr}
+.split:has(> .photo-slot) > *:not(.photo-slot){max-width:68ch}
+
 
 /* ==========================================================================
    11. LOGO ROW (partner logos)
