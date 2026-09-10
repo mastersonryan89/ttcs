@@ -495,16 +495,23 @@ fieldset{border:0;padding:0;margin:0}
 
 
 /* ==========================================================================
-   18. EMBED SLOT (donate page)
-   A dashed box holding the place where an outside donation form will be
-   pasted in. It looks unfinished on purpose so nobody mistakes it for a
-   working "give" button. Delete the whole box once the real form is in.
+   18. DONATION FORM (donate page)
+   The white card that holds the Givebutter donation form. Givebutter draws
+   the form itself and controls how it looks inside — this only gives it a
+   clean card to sit in and keeps it from touching the edges on a phone.
    ========================================================================== */
-.embed-slot{
-  background:var(--white);border:2px dashed #BFB8A6;border-radius:3px;
-  padding:2rem 1.6rem;text-align:center;
+.give-form{
+  background:var(--white);border:1px solid #E3DCCB;border-radius:3px;
+  padding:1.6rem 1.4rem;
 }
-.embed-slot .eyebrow{color:var(--ink-soft)}
-.embed-slot h3{margin-bottom:.6rem}
-.embed-slot p{color:var(--ink-soft);font-size:.93rem;max-width:46ch;margin:0 auto 1rem}
-.embed-slot p:last-child{margin-bottom:0}
+/* Givebutter renders into a custom element; it needs to be told to fill the
+   card, otherwise some browsers give it no width at all. Givebutter caps its
+   own form at 440px, so we centre it rather than let it hug the left edge. */
+.give-form givebutter-widget{display:block;width:100%;max-width:440px;margin:0 auto}
+.give-alt{
+  color:var(--ink-soft);font-size:.9rem;line-height:1.55;
+  margin:1.4rem 0 0;padding-top:1.2rem;border-top:1px solid #E3DCCB;
+}
+@media (max-width:600px){
+  .give-form{padding:1.1rem .9rem}
+}

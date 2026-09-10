@@ -40,7 +40,7 @@ any more.
 | `get-involved.html` | Get Involved |
 | `employers.html` | Employer Partnerships |
 | `contact.html` | Contact Us |
-| `donate.html` | Donate — needs the donation form pasted in |
+| `donate.html` | Donate — carries the live Givebutter form |
 | `looking-for-services.html` | For people seeking help |
 | `privacy.html` · `terms.html` | Legal pages |
 | `thank-you.html` | Where both forms land after someone hits send |
@@ -101,9 +101,18 @@ shows up straight away — the hiding rule only applies to the empty placeholder
       it for both `contact` and `services`. Then send a real test message from **both** pages on
       the live site and confirm it arrives. Forms do not work when you open the file on your own
       computer — only once published.
-- [ ] **Embed the Givebutter or Zeffy donation form on `donate.html`.** Right now the page
-      shows a dashed box telling people to call instead. Step-by-step instructions are in a
-      comment right above that box in `donate.html`. Make a $1 test donation before launch.
+- [x] ~~**Finish Givebutter account setup and publish the campaign.**~~ Done — the campaign
+      "Support Stability for Neighbors in Need" is published and Givebutter is accepting
+      transactions (card, digital wallet, PayPal, Venmo and Cash App). One-time and monthly
+      giving are both switched on, with one-time as the default.
+- [ ] **Make a $1 test donation and confirm the receipt email arrives.** Nobody has put a real
+      card through the form yet. Give $1 to yourself on the published site, check the receipt
+      lands, then refund it in Givebutter. This is the last thing standing between the Donate
+      page and launch.
+- [ ] **Decide on the optional tip prompt.** It is currently **on**, so after choosing an amount
+      donors are asked to add a tip for Givebutter on top of their gift. Cover-the-fees is on
+      too, which is normal. Leave both or switch the tip off in the campaign's payment settings
+      — either is fine, but decide on purpose rather than by default.
 - [ ] Replace the `—` placeholders in the impact numbers with verified counts, or delete the
       section. `impact.html` is written so it works either way — it explains the method
       instead of showing figures we cannot source yet.
@@ -171,7 +180,8 @@ To publish a change later, drag the folder in again. It replaces what is there.
 ### Step 3 — before you tell anyone
 
 Work the **Before launch** checklist above. The two that genuinely block a launch are the
-**form notification emails** and the **donation form**. A site that quietly swallows
-messages from someone in reentry is worse than no site at all.
+**form notification emails** and the **$1 test donation**. A site that quietly swallows
+messages from someone in reentry is worse than no site at all, and a donation form nobody
+has put a real card through is a promise you have not checked.
 
 Say **"help me publish this"** in Claude Code if you get stuck on any step.

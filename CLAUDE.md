@@ -47,7 +47,9 @@ fields change, that page changes with them.
   opening a file directly. When the nav changes, update all pages.
 - All styling lives in `css/style.css`, organized into numbered CAPS sections.
 - Fonts: Big Shoulders Display (headings) + Public Sans (body), loaded from Google Fonts.
-- Hosting will be Cloudflare Pages or Netlify. Donations via Givebutter or Zeffy (both free to nonprofits).
+- Hosting will be Cloudflare Pages or Netlify. Donations run through **Givebutter** — the form is
+  embedded on `donate.html` as of 9 September 2026. Change amounts and wording in the Givebutter
+  dashboard, not in the HTML.
 
 ## Brand colors
 

@@ -10,6 +10,11 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;600;700;800&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css?v=3">
+
+<!-- Givebutter donation widget library. Givebutter asks for this in the <head>.
+     The acct code is the Tiff Top account; the form itself is further down the
+     page. Only this page loads it — no reason to slow every other page with it. -->
+<script async src="https://widgets.givebutter.com/latest.umd.cjs?acct=PtH8fFA5iLlX5oBc&p=other"></script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to main content</a>
@@ -84,28 +89,28 @@
 </section>
 
 <!-- =========================================================
-     THE DONATION FORM GOES HERE
+     THE DONATION FORM (Givebutter)
      ---------------------------------------------------------
-     NOTE FOR RYAN — this is the one thing that has to happen
-     before this page can go live.
+     NOTE FOR RYAN — the live donation form. It is in two
+     pieces and both have to stay:
 
-     1. Set up a free nonprofit account with Givebutter
-        (givebutter.com) or Zeffy (zeffy.com). Both are free
-        to 501(c)(3) organizations. Zeffy takes zero fees;
-        Givebutter has more features and asks donors for an
-        optional tip. Either is fine.
-     2. Build one donation form in that account. Turn on the
-        monthly-giving option while you are in there.
-     3. They will give you a block of embed code.
-     4. Come back here and say: "paste the donation embed
-        code into donate.html" and hand it over. It replaces
-        the dashed box below, and the dashed box gets deleted.
-     5. Make a $1 test donation to yourself and confirm the
-        receipt email arrives before launch.
+       1. The <script> line up in the <head> of this file.
+          That loads Givebutter's widget library.
+       2. The <givebutter-widget> line just below. The id
+          "LqbzDy" is the widget you built in Givebutter. It
+          points at your campaign "Support Stability for
+          Neighbors in Need" — that is the one to open in the
+          dashboard when you want to change something.
 
-     Until then the page is honest: it tells people how to
-     give by phone or in person rather than showing a button
-     that does not work.
+     To change the suggested amounts, the wording, the cover-
+     the-fees option or monthly giving, do all of that in your
+     Givebutter dashboard — not in this file. The page picks
+     up those changes on its own.
+
+     If you ever want a donate button on OTHER pages, the
+     <head> script has to be copied to those pages too. Say
+     "add the Givebutter library to every page" and it will
+     be done properly.
      ========================================================= -->
 <section class="section" id="give">
   <div class="wrap split split-top reveal">
@@ -120,14 +125,11 @@
       <p>Every donation is receipted. Gifts are tax-deductible to the extent allowed by law.</p>
     </div>
 
-    <div class="embed-slot reveal">
-      <span class="eyebrow">Online giving</span>
-      <h3>The donation form goes here</h3>
-      <p>Our online giving form is being set up. Until it is live, we would rather tell you the
-         truth than show you a button that does not work.</p>
-      <p><b>To give today:</b> call <a href="tel:6145020396">614-502-0396</a> during office hours,
-         or come to 1511 S. High St, Columbus, OH 43207, Monday to Friday, 10am to 6pm.</p>
-      <p><a class="btn btn-red" href="tel:6145020396">Call 614-502-0396</a></p>
+    <div class="give-form reveal">
+      <givebutter-widget id="LqbzDy"></givebutter-widget>
+      <p class="give-alt">Would rather not give online? Call
+         <a href="tel:6145020396">614-502-0396</a> during office hours, or come to
+         1511 S. High St, Columbus, OH 43207, Monday to Friday, 10am to 6pm.</p>
     </div>
   </div>
 </section>
