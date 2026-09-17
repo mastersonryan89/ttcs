@@ -95,12 +95,6 @@ shows up straight away — the hiding rule only applies to the empty placeholder
 
 ## Before launch
 
-- [ ] **Turn on form notification emails, then test both forms.** The forms are connected to
-      Netlify now, but Netlify only *collects* messages — it does not email them to anyone until
-      you say so. In Netlify go to **Forms › Form notifications**, add Tiffany's address, and do
-      it for both `contact` and `services`. Then send a real test message from **both** pages on
-      the live site and confirm it arrives. Forms do not work when you open the file on your own
-      computer — only once published.
 - [x] ~~**Finish Givebutter account setup and publish the campaign.**~~ Done — the campaign
       "Support Stability for Neighbors in Need" is published and Givebutter is accepting
       transactions (card, digital wallet, PayPal, Venmo and Cash App). One-time and monthly
@@ -123,6 +117,10 @@ shows up straight away — the hiding rule only applies to the empty placeholder
 - [x] ~~Add the EIN once the determination letter arrives.~~ Done — EIN **42-3943236**
       is in the footer of every page, on the Donate page, on Get Involved and in the Donations
       section of the Terms of Use.
+- [x] ~~**Turn on form notification emails, then test both forms.**~~ Done — Netlify is
+      detecting both `contact` and `services`, notification emails are switched on, and
+      messages are arriving. Whoever holds that inbox now has to check it every workday,
+      because `looking-for-services.html` promises a reply within one business day.
 - [x] Write and add `privacy.html` and `terms.html`
 - [x] Build out Get Involved, Employers, Donate, Impact and Looking for Services
 - [x] Hide the photo placeholders so the site reads as finished without photos
@@ -180,9 +178,9 @@ To publish a change later, drag the folder in again. It replaces what is there.
 
 ### Step 3 — before you tell anyone
 
-Work the **Before launch** checklist above. The two that genuinely block a launch are the
-**form notification emails** and the **$1 test donation**. A site that quietly swallows
-messages from someone in reentry is worse than no site at all, and a donation form nobody
-has put a real card through is a promise you have not checked.
+Work the **Before launch** checklist above. The forms are done — Netlify is detecting them
+and the notification emails arrive. The one thing left that genuinely blocks a launch is the
+**$1 test donation**: a donation form nobody has put a real card through is a promise you
+have not checked.
 
 Say **"help me publish this"** in Claude Code if you get stuck on any step.
