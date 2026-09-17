@@ -116,12 +116,13 @@ shows up straight away — the hiding rule only applies to the empty placeholder
 - [ ] Replace the `—` placeholders in the impact numbers with verified counts, or delete the
       section. `impact.html` is written so it works either way — it explains the method
       instead of showing figures we cannot source yet.
-- [ ] Add the EIN to the footer and to the Donate page once the determination letter arrives.
-      Corporate matching-gift portals ask for it, so a blank one costs real money.
 - [ ] Add real photos *(not a launch blocker — the placeholders are hidden)*
 - [ ] Claim and fill in the Google Business Profile with matching address, phone, hours
 - [ ] Apply for Google for Nonprofits (unlocks the $10,000/month Ad Grant)
 - [ ] Point `TTC-solutions.org` at Netlify — see **Publishing** below
+- [x] ~~Add the EIN once the determination letter arrives.~~ Done — EIN **42-3943236**
+      is in the footer of every page, on the Donate page, on Get Involved and in the Donations
+      section of the Terms of Use.
 - [x] Write and add `privacy.html` and `terms.html`
 - [x] Build out Get Involved, Employers, Donate, Impact and Looking for Services
 - [x] Hide the photo placeholders so the site reads as finished without photos
